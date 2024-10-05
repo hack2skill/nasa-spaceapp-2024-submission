@@ -23,6 +23,7 @@ An info board that keeps users updated with the latest exoplanet discoveries and
 The solution focuses on making space education inclusive, offering multilingual support and personalized learning journeys for diverse communities. This project is designed to foster curiosity and passion for exoplanet exploration, while making complex astronomical discoveries more accessible.
 
 ## Code Execution Instruction:
+## Direct Hosted link : https://nova-tag-5onx.vercel.app/
   ### Pre-requisites:
 #### Node.js and npm should be installed on your machine.
 #### Ensure that MongoDB is installed and running, or have access to a cloud-based MongoDB service.
