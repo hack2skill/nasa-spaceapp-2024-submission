@@ -1,0 +1,42 @@
+export const data = [
+  {
+    question: "What is an exoplanet?",
+    option1: "A planet outside the Solar System",
+    option2: "A planet within the Solar System",
+    option3: "A dwarf planet in the Kuiper Belt",
+    option4: "A moon orbiting a gas giant",
+    ans: 1,
+  },
+  {
+    question: "Which method is commonly used to detect exoplanets?",
+    option1: "Direct Imaging",
+    option2: "Transit Method",
+    option3: "Flyby Missions",
+    option4: "Gravitational Lensing",
+    ans: 2,
+  },
+  {
+    question: "What was the first confirmed exoplanet discovered in 1992?",
+    option1: "Kepler-186f",
+    option2: "PSR B1257+12 b",
+    option3: "HD 209458 b",
+    option4: "Gliese 581g",
+    ans: 2,
+  },
+  {
+    question: "Which space telescope has discovered the most exoplanets?",
+    option1: "James Webb Space Telescope",
+    option2: "Hubble Space Telescope",
+    option3: "Kepler Space Telescope",
+    option4: "Spitzer Space Telescope",
+    ans: 3,
+  },
+  {
+    question: "What defines the habitable zone around a star?",
+    option1: "A region where liquid water can exist",
+    option2: "A region close to the star",
+    option3: "A region far from the star",
+    option4: "A region with methane clouds",
+    ans: 1,
+  },
+];
