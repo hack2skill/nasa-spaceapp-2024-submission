@@ -1,0 +1,67 @@
+.sports-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow to create a clean look */
+  height: 100vh; /* Full viewport height */
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden; /* Prevent overflow from showing */
+}
+
+.carousel {
+  display: flex; /* Flex layout for horizontal alignment */
+  transition: transform 0.3s ease-in-out;
+}
+
+.sport-card {
+  min-width: 282px; /* Set minimum width for the card */
+  height: 495px; /* Set height of the card */
+  text-align: center;
+  margin-right: 16px; /* Space between cards */
+  position: relative; /* Necessary for the "Get Started" button positioning */
+  transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
+}
+
+.sport-card.enlarged {
+  transform: scale(1.2); /* Enlarge the card on hover */
+  z-index: 10; /* Bring the card to the front */
+}
+
+.sport-image {
+  width: 100%;
+  height: 70%; /* Adjust height to fit in the card */
+  object-fit: cover; /* Ensure the image covers the area */
+}
+
+.sport-title {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #000; /* Adjust the color as needed */
+}
+
+/* Button styles */
+.btn-get-started {
+  display: none; /* Initially hidden */
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sport-card.enlarged .btn-get-started {
+  display: block; /* Show button on hover */
+}
+
+.btn-get-started:hover {
+  background-color: #0056b3; /* Change color on hover */
+}
