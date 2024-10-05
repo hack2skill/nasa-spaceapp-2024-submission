@@ -77,4 +77,4 @@ npm run dev
 Feel free to reach out if you have any additional requests or questions!
 Email: [ goswamikrishna549@gmail.com ]
   
- *The Repository must contain your **Execution Plan PDF**.
+ **Execution Plan PDF** [https://drive.google.com/file/d/1ffSqz_1znAjlgZhYYwEzZJBkatiQVBuM/view?usp=sharing]
