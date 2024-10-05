@@ -1,0 +1,40 @@
+.comparator{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.comparator-search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.comparator-compare-btn{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    background: green;
+}
+.comparison-details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.comparison-details .planet-details{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2px;
+    padding: 15px;
+    border: 1px solid var(--text-white);
+}
+.planet-details .planet{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.planet-details .planet h3{
+    color: var(--text-grey);
+    text-transform: uppercase;
+}

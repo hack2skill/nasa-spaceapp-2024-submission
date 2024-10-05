@@ -1,0 +1,58 @@
+.predictor-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    overflow-y: scroll;
+    height: 100vh;
+}
+#animation-output {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+  
+.predictor-search {
+    background: rgba(39, 46, 57, 255);
+    width: fit-content;
+    padding: 10px 13px;
+    display: flex;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.predictor-fetch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.predictor-fetch button {
+    display: flex;
+    align-items: center;
+    background: green;
+    gap: 5px;
+}
+.predictor-graphs{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.predictor-animation-content{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--text-white);
+    padding: 15px;
+    border-radius: 2px;
+    gap: 10px;
+}
+.predictor-animator-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

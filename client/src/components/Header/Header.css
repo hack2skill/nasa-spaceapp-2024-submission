@@ -1,0 +1,46 @@
+.header{
+    width:100%;
+    background-color: var(--grey-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 68px;
+    border: 1px solid rgb(32, 38, 46);
+    position: relative;
+}
+.header-flex-end{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.header--login-btn{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background-color: #323f4a;
+    padding: 10px;
+    border-radius: 60px;
+}
+.header--logo{
+    width: 127px;
+    height: 85px;
+}
+.explanation-div {
+    padding: 10px; 
+    margin-top: 10px; 
+    display: flex; 
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    align-items: flex-end;
+    justify-content: center; 
+}
+
+.explanation-content{
+    background: var(--grey-black);
+    padding: 10px;
+    align-items: center;
+    gap: 5px;
+    display: flex
+}

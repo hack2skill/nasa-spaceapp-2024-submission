@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+:root{
+  --pure-black: #000000;
+  --grey-black: rgba(24, 29, 35, 0.75);
+  --btn-grey: #323f4a;
+  --text-white: #ffffff;
+  --text-grey: #95A7BC;
+}
+/* General Styling  */
+.section-p{
+  padding: 20px 25px;
+  color: var(--text-white);
+}
+.section-m{
+  padding: 20px 50px;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+button{
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: none;
+  background: none;
+  border: none;
+  color: var(--text-white);
+}
+img.logo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.icon{
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  cursor: pointer;
+}
+input{
+  outline: none;
+  border: none;
+  background: none;
+  color: var(--text-white);
+}
+a{
+  text-decoration: none;
+  color: var(--text-white);
+  cursor: pointer;
+}
+p{
+  color: var(--text-white);
+}
+li{
+  list-style: none;
+  color: var(--text-white);
+}
+.app--outer{
+  display: flex;
+  width: 100%;
+}
+.page--outer{
+  width: 100%;
+}
+.content--container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  flex: 1;
+}
+.content--container .content--note{
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
+  font-size: small;
+  font-style: italic;
+}
+.content--container .content--note:hover{
+  text-decoration: underline;
+}
+.search--bar .Select__menu-list::-webkit-scrollbar {
+  display: none;
+}
+
+.search--bar .Select__menu-list {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;     
+}

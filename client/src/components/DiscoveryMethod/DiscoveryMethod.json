@@ -1,0 +1,60 @@
+{
+    "methods": [
+      {
+        "name": "Radial Velocity",
+        "explanation": "This method looks for tiny wobbles in a star's movement caused by the gravitational pull of a planet orbiting it. As the planet pulls on the star, the star moves slightly toward or away from us.",
+        "illustration_overview": "A diagram showing a star and a planet, with arrows indicating the planet pulling the star slightly, and the star wobbling back and forth."
+      },
+      {
+        "name": "Direct Imaging",
+        "explanation": "In this method, scientists take direct pictures of planets. This is hard because stars are very bright, and planets are dim. Special techniques are used to block out the star's light to make the planet visible.",
+        "illustration_overview": "A picture showing a bright star with a small planet near it, with a 'coronagraph' (a device) blocking the star’s light to reveal the planet."
+      },
+      {
+        "name": "Eclipse Timing Variations",
+        "explanation": "Planets can affect each other's orbits. When two planets are in the same system, the timing of their 'eclipses' (when a planet passes in front of a star) can change slightly. By watching these timing variations, scientists can detect additional planets.",
+        "illustration_overview": "A star with two planets orbiting around it. Show one planet causing the other’s orbit to 'wobble,' affecting the timing of when it passes in front of the star."
+      },
+      {
+        "name": "Transit",
+        "explanation": "A planet passes in front of its star, blocking a tiny bit of the star's light. By measuring the dip in brightness, scientists can figure out the planet's size and orbit.",
+        "illustration_overview": "A diagram showing a planet passing in front of a star and a line graph showing the dip in light as the planet transits."
+      },
+      {
+        "name": "Astrometry",
+        "explanation": "Similar to radial velocity, but instead of looking for changes in light, scientists measure the exact position of the star and see if it 'wobbles' due to a planet's pull.",
+        "illustration_overview": "A star with a very tiny wobble due to a planet, showing the movement in the star's position."
+      },
+      {
+        "name": "Disk Kinematics",
+        "explanation": "This method looks at the motion of gas and dust in a disk around a young star. If the gas moves in unexpected ways, it could be due to a planet forming in the disk.",
+        "illustration_overview": "A young star with a spinning disk of gas around it. Highlight part of the disk that moves faster or slower, showing that a planet is forming inside the disk."
+      },
+      {
+        "name": "Orbital Brightness Modulation",
+        "explanation": "A planet can make the light of a star appear brighter or dimmer as it orbits. This happens because the planet reflects light or blocks parts of the star, depending on where it is in its orbit.",
+        "illustration_overview": "A planet orbiting around a star, with arrows showing how the planet reflects light when it's in different positions."
+      },
+      {
+        "name": "Pulsation Timing Variations",
+        "explanation": "Certain types of stars, like pulsating stars, can 'blink' regularly. If there's a planet, the timing of these blinks can change slightly due to the planet's gravity.",
+        "illustration_overview": "A pulsating star with regular blinking, and then a small planet affecting the timing of the blinks."
+      },
+      {
+        "name": "Microlensing",
+        "explanation": "When a star with a planet passes in front of a distant star, the gravity from the nearby star can bend the light from the distant star. This bending reveals the presence of the planet.",
+        "illustration_overview": "Two stars lined up, with the closer star bending the light of the farther one. Show a planet orbiting the closer star, and the bending light revealing it."
+      },
+      {
+        "name": "Transit Timing Variations",
+        "explanation": "If a planet’s transit (passing in front of a star) happens earlier or later than expected, it might be because of another planet pulling on it. This allows scientists to find other planets in the same system.",
+        "illustration_overview": "Two planets orbiting a star, with one slightly pulling the other, causing changes in the timing of its transit."
+      },
+      {
+        "name": "Pulsar Timing",
+        "explanation": "Pulsars are very fast-spinning stars that send out regular radio signals. If a planet is orbiting a pulsar, the timing of these signals can be slightly altered due to the planet's pull.",
+        "illustration_overview": "A pulsar emitting radio signals, and a planet orbiting it, causing slight variations in the timing of those signals."
+      }
+    ]
+  }
+  
