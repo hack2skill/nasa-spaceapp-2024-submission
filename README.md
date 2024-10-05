@@ -6,7 +6,7 @@
 
 ## A Brief of the Prototype:
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app). It includes following features until now: 
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app). 
 
 Our main goal is to create an optimized and efficient galaxy app with integration of 3 dimensional space where a user can learn about exoplanets listed under Habitable Worlds Observatory (HWO). 
 We are going to build a galaxy from scratch which will include all the exoplanets under HWO and multiple functionalities such as :-
