@@ -2,13 +2,16 @@ import os
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, send_from_directory
 from flask_cors import CORS
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 from scipy.signal import spectrogram
+import firebase_admin
+from firebase_admin import credentials, storage
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -17,19 +20,23 @@ UPLOAD_FOLDER = 'uploads/'
 PROCESSED_FOLDER = 'processed_data/'
 ALLOWED_EXTENSIONS = {'csv'}
 
-# Ensure upload and processed folders exist
+cred = credentials.Certificate('./seismotrack-aa80c-firebase-adminsdk-cw0zv-13c8fa7db2.json')
+firebase_admin.initialize_app(cred, {
+    'storageBucket': 'seismotrack-aa80c.appspot.com'
+})
+
+bucket = storage.bucket()
+
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(PROCESSED_FOLDER, exist_ok=True)
 
-# Check if the file extension is allowed
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-# Route to handle file uploads and AI model processing
 @app.route('/api/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
-        return jsonify({'error': 'No file part'}), 403
+        return jsonify({'error': 'No file part'}), 400
 
     file = request.files['file']
 
@@ -43,44 +50,71 @@ def upload_file():
 
             # Process the file with AI model and filter noise
             filtered_data, spectrogram_path = process_csv(file_path)
-            return jsonify({"filtered_data": filtered_data, "spectrogram_path": spectrogram_path}), 200
+
+            # Generate the filename for Firebase
+            time_abs = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')  # Current time in the specified format
+            filtered_file_name = f"filtered_data_{time_abs}.csv"
+            upload_to_firebase('./processed_data/filtered_data.csv', filtered_file_name)
+
+            return jsonify({
+                "filtered_data": filtered_data,
+                "spectrogram_path": f'spectrogram/{os.path.basename(spectrogram_path)}',
+                "download_link": filtered_file_name
+            }), 200
 
         except Exception as e:
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': str(e)}), 500  # Return specific error message
 
     else:
         return jsonify({'error': 'File type not allowed'}), 400
 
-# Function to process CSV, train AI model, and filter noise
+def upload_to_firebase(file_path, file_name):
+    try:
+        blob = bucket.blob(file_name)
+        blob.upload_from_filename(file_path)
+        print(f"Uploaded {file_name} to Firebase Storage.")
+    except Exception as e:
+        raise ValueError(f"Failed to upload to Firebase: {e}")
+    
+def generate_signed_url(blob_name):
+    blob = bucket.blob(blob_name)
+    url = blob.generate_signed_url(expiration=timedelta(minutes=15))  # URL valid for 15 minutes
+    return url
+
+@app.route('/api/logs', methods=['GET'])
+def get_logs():
+    blobs = bucket.list_blobs()  # Fetch all blobs (files) in the storage bucket
+    log_data = []
+    for blob in blobs:
+        signed_url = generate_signed_url(blob.name)  # Generate signed URL for each file
+        log_data.append({
+            "name": blob.name,
+            "time_created": blob.time_created,
+            "download_url": signed_url  # Use signed URL instead of public URL
+        })
+    return jsonify(log_data), 200
+
 def process_csv(file_path):
     try:
-        # Load CSV file
         seismic_data = pd.read_csv(file_path)
 
-        # Ensure the required columns exist
         if 'rel_time(sec)' not in seismic_data.columns or 'velocity(c/s)' not in seismic_data.columns:
             raise ValueError("CSV file is missing required columns: 'rel_time(sec)' and 'velocity(c/s)'")
 
-        # Extract features (X) and target (y)
         X = seismic_data[['rel_time(sec)']]
         y = seismic_data['velocity(c/s)']
 
-        # Use RandomForestRegressor to predict continuous values
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
         model = RandomForestRegressor(n_estimators=100, random_state=42)
         model.fit(X_train, y_train)
 
-        # Predict the values for the entire dataset
         predictions = model.predict(X)
 
-        # Add predictions to the dataframe (filtered data)
         seismic_data['filtered'] = predictions
 
-        # Save filtered data to CSV
         processed_file_path = os.path.join(PROCESSED_FOLDER, 'filtered_data.csv')
         seismic_data.to_csv(processed_file_path, index=False)
 
-        # Generate spectrogram
         spectrogram_path = generate_spectrogram(seismic_data)
 
         return seismic_data.to_dict(orient='records'), spectrogram_path
@@ -88,10 +122,9 @@ def process_csv(file_path):
     except Exception as e:
         raise ValueError(f"Error processing CSV file: {e}")
 
-# Function to generate spectrogram
 def generate_spectrogram(data):
-    # Assume the sampling rate is 1 Hz for simplicity (adjust as necessary)
-    fs = 1.0
+    # Generate the spectrogram based on your seismic data
+    fs = 1.0  # Sampling frequency, adjust as needed
     f, t, Sxx = spectrogram(data['velocity(c/s)'], fs)
 
     plt.figure()
@@ -101,13 +134,17 @@ def generate_spectrogram(data):
     plt.title('Spectrogram of Seismic Data')
     plt.colorbar(label='Intensity [dB]')
     
-    spectrogram_path = os.path.join(PROCESSED_FOLDER, 'seismic_spectrogram.png')
+    # Save the spectrogram image in the processed data folder
+    spectrogram_path = os.path.join('processed_data', 'seismic_spectrogram.png')
     plt.savefig(spectrogram_path)
     plt.close()  # Close the figure to free memory
 
     return spectrogram_path
 
-# Route to download filtered data as CSV
+@app.route('/spectrogram/<filename>')
+def serve_spectrogram(filename):
+    return send_from_directory('processed_data', filename)
+
 @app.route('/api/download', methods=['GET'])
 def download_filtered_data():
     filtered_file_path = os.path.join(PROCESSED_FOLDER, 'filtered_data.csv')
