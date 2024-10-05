@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import matplotlib
-matplotlib.use('Agg')  # Use a non-interactive backend for saving figures
+matplotlib.use('Agg')
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import pandas as pd
@@ -29,7 +29,7 @@ def allowed_file(filename):
 @app.route('/api/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
-        return jsonify({'error': 'No file part'}), 400
+        return jsonify({'error': 'No file part'}), 403
 
     file = request.files['file']
 
