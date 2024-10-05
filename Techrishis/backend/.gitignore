@@ -1,0 +1,6 @@
+node_modules/
+.env
+yolov8x.pt
+models/yolo5_last.pt
+models/keypoints_model.pth
+env/

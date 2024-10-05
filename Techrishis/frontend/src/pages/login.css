@@ -1,0 +1,49 @@
+.login {
+  background-color: #333 !important; 
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.login h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.login label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff; 
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+  outline: none;
+}
+
+.login-button {
+  background-color: #264f0b;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex; /* Align items within the button */
+  align-items: center; /* Center icon and text */
+}
+
+.login-button:hover {
+  background-color: #1b3a07; 
+}
+
+.error {
+  color: #ff0000; 
+}

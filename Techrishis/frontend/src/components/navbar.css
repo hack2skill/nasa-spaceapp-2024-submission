@@ -1,0 +1,79 @@
+header {
+  background: none; /* No background */
+  padding: 0.5rem 0;
+  position: relative; /* Required for the pseudo-element */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000; /* Black text color for logo */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  position: relative; /* Required for the pseudo-element */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links > div {
+  margin-left: auto; /* Align this section to the right */
+}
+
+.nav-text {
+  color: #000; /* Black text color */
+  text-decoration: none;
+  margin-left: 1rem; /* Increased margin */
+  font-size: 0.9rem;
+  transition: transform 0.2s; /* Add transition for smooth hover */
+  position: relative; /* Required for the pseudo-element */
+}
+
+.nav-text:hover {
+  transform: translateY(-2px); /* Move up on hover */
+  z-index: 1; /* Bring the hovered element on top */
+}
+
+.faq-btn {
+  background-color: #FD7642; /* Background color for FAQ */
+  color: white; /* Text color for FAQ */
+  border: none;
+  border-radius: 5px;
+  padding: 0.25rem 0.75rem;
+  margin-left: 1rem; /* Increased margin */
+  cursor: pointer;
+  transition: transform 0.2s; /* Add transition for smooth hover */
+  position: relative; /* Required for the pseudo-element */
+}
+
+.faq-btn:hover {
+  transform: translateY(-2px); /* Move up on hover */
+  background-color: #e05a2a; /* Darker shade for FAQ button on hover */
+  z-index: 1; /* Bring the hovered element on top */
+}
+
+/* Blur effect */
+.nav-links:hover ~ * {
+  filter: blur(2px); /* Blur everything else */
+}
+
+.nav-text:hover ~ .nav-text,
+.faq-btn:hover ~ .nav-text {
+  filter: none; /* Remove blur on hovered element */
+}
+
+.nav-text:hover,
+.faq-btn:hover {
+  filter: none; /* Ensure hovered button is clear */
+}

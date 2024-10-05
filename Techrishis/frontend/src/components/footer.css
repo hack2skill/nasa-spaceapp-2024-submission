@@ -1,0 +1,30 @@
+footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+  }
+  
+  .social-icons a {
+    margin-left: 10px; 
+  }
+  
+  .social-icons img {
+    width: 30px; 
+    height: 30px;
+  }
+  

@@ -1,0 +1,49 @@
+/* signup.css */
+
+.signup {
+    background-color: #333 !important; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  
+  .signup h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .signup label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .signup input[type="email"],
+  .signup input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #444; /* Darker background color for inputs */
+    color: #fff; /* White text color for inputs */
+    outline: none; /* Remove default input outline */
+  }
+  
+  .signup button {
+    background-color: #264f0b; /* Green button background color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .signup button:hover {
+    background-color: #1b3a07; /* Darker green color on hover */
+  }
+  
+  .error {
+    color: #ff0000; /* Red error message color */
+  }
+  
