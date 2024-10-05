@@ -1,0 +1,289 @@
+body {
+  background-image: url("bg.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  background-color: #1f1f1f;
+  user-select: none;
+}
+#forum {
+  display: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  gap: 20px;
+  width: 80%;
+  max-width: 1000px;
+  margin: 5% auto;
+  padding: 8px;
+}
+.message {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #555;
+}
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  z-index: 1000;
+  padding: 8px;
+  background-color: rgba(177, 0, 177, 0.323);
+  border-radius: 18px;
+}
+
+.social-sidebar a {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-sidebar a:hover {
+  color: #007bff;
+}
+
+.social-sidebar .linkedin i {
+  background: linear-gradient(to bottom, #0077b5, #005487);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.social-sidebar .github i {
+  background: #333;
+  padding: 10px;
+  border-radius: 50%;
+}
+.user-name {
+  font-weight: bold;
+  color: #a9a9a9;
+}
+
+.user-message {
+  margin-top: 5px;
+}
+
+.delete-button {
+  background-color: #888;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.add-button {
+  background-color: rgb(0, 87, 0);
+  color: white;
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+#user-input {
+  margin: 20px;
+  display: flex;
+}
+
+#user-input input,
+#user-input button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+#user-input input {
+  flex: 1;
+  margin-right: 10px;
+  background-color: #555;
+  color: #fff;
+}
+
+#user-input button {
+  background-color: #888;
+  color: #fff;
+}
+#courses,
+#dashboard,
+#about,
+#profile {
+  display: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  gap: 20px;
+  width: 80%;
+  max-width: 1000px;
+  margin: 5% auto;
+  padding: 8px;
+}
+.no-course-message {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+.dash-content {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  min-width: 150px;
+  height: max-content;
+  box-sizing: border-box;
+}
+.logout-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.text {
+  color: white;
+}
+.navbar ul {
+  margin-left: auto;
+  margin-right: 0;
+  width: 25%;
+}
+.navbar ul li {
+  margin: auto;
+}
+.navbar ul li:hover {
+  background-color: rgba(0, 64, 154, 0.818);
+  border-radius: 10px;
+}
+#regcourses {
+  height: 100%;
+}
+.course {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 208, 255, 0.37),
+    rgba(225, 2, 255, 0.441)
+  );
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 20px;
+  padding: 15px;
+  backdrop-filter: blur(10px);
+  display: flexbox;
+  text-align: center;
+  vertical-align: auto;
+  margin: 2% auto;
+  border: 5px none;
+  transition: 0.5s;
+}
+.course:hover {
+  border: 5px solid rgb(177, 0, 177);
+  transform: scale(1.01);
+  cursor: pointer;
+  transition: 0.5s;
+}
+#login {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  height: max-content;
+  width: 25%;
+  margin: 5% auto;
+  padding: 8px;
+  font-size: 18px;
+  min-width: 250px;
+}
+
+#course-search {
+  background-color: #444;
+  color: white;
+  border: none;
+  border: 2px solid rgb(177, 0, 177);
+  border-radius: 18px;
+  padding: 10px;
+}
+#course-search::placeholder {
+  color: white;
+}
+
+#login input {
+  background-color: transparent;
+  border: 2px solid rgb(177, 0, 177);
+  border-radius: 18px;
+  margin: 2% auto;
+  padding: 8px;
+  width: 100%;
+  color: white;
+}
+#loginbtn {
+  display: flex;
+  margin: auto;
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgb(177, 0, 177);
+  border-radius: 18px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#loginbtn:hover {
+  background-color: rgb(177, 0, 177);
+}
+#login label {
+  display: flex;
+  margin: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .navbar ul {
+    width: 100%;
+  }
+  .navbar ul li {
+    width: 100%;
+    display: block;
+    margin: 2% auto;
+    text-align: center;
+  }
+  #login input {
+    margin: 5% auto;
+  }
+  #dashboard {
+    flex-direction: column;
+  }
+  .dash-content {
+    width: 100%;
+    display: block;
+  }
+}
