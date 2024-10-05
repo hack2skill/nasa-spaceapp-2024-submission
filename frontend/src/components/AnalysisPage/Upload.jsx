@@ -27,8 +27,8 @@ const Upload = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            setData(response.data.filtered_data);  // Store the filtered data
-            setSpectrogram(response.data.spectrogram_path);  // Store the path for the spectrogram
+            setData(response.data.filtered_data);  
+            setSpectrogram(response.data.spectrogram_path); 
         } catch (error) {
             console.error('Error uploading file:', error);
         }
