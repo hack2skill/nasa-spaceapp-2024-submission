@@ -11,8 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+<<<<<<< HEAD
 .env
 env
+=======
+>>>>>>> cac3bf7d66b7a1123d005b6d54ca85f5637240c6
 
 # Editor directories and files
 .vscode/*
@@ -24,5 +27,8 @@ env
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
 
 seismotrack-aa80c-firebase-adminsdk-cw0zv-13c8fa7db2.json
+=======
+>>>>>>> cac3bf7d66b7a1123d005b6d54ca85f5637240c6
