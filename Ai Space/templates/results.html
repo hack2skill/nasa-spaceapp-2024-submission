@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        .graph-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .graph-container img {
+            max-width: 30%;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Results</h1>
+    
+    <h2>Altitude and Thrust</h2>
+    <p><strong>Estimated Altitude:</strong> {{ altitude }} meters</p>
+    <p><strong>Required Thrust:</strong> {{ required_thrust }} N</p>
+    
+    <h2>Images</h2>
+    <h3>Original Image with Marked Spots</h3>
+    <img src="{{ url_for('static', filename='original_image.png') }}" alt="Original Image">
+    
+    <h3>Heatmap</h3>
+    <img src="{{ url_for('static', filename='heatmap_image.png') }}" alt="Heatmap">
+    
+    <h3>Landing Spot Map</h3>
+    <img src="{{ url_for('static', filename='landing_spot_map.png') }}" alt="Landing Spot Map">
+
+    <h2>Graphs</h2>
+    <h3>Speed vs. Altitude</h3>
+    <img src="{{ url_for('static', filename='speed_altitude_graph.png') }}" alt="Speed vs. Altitude Graph">
+</body>
+</html>

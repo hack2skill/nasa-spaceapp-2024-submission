@@ -1,0 +1,24 @@
+* ::-webkit-scrollbar{
+   display: none;
+} 
+
+/* App.css */
+body {
+   margin: 0;
+   scroll-behavior: smooth;
+ }
+ 
+ h1 {
+   margin: 0;
+   padding: 0;
+ }
+ 
+ section {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2em;
+   color: white;
+ }
+ 
