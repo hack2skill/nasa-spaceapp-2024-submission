@@ -39,16 +39,17 @@ const Upload = () => {
     };
 
     return (
-        <div>
-            <h1>Upload Seismic Data CSV</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="file" onChange={handleFileChange} />
-                <button type="submit">Upload</button>
+        <div className="max-w-4xl mx-auto p-8">
+            <h1 className="text-3xl font-bold text-center mb-8">Upload Seismic Data CSV</h1>
+            <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-4">
+                <input type="file" onChange={handleFileChange} className="border border-gray-300 p-2 rounded-lg w-full max-w-xs"/>
+                <button type="submit" className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Upload</button>
             </form>
 
             {data && (
-                <div>
-                    <h2>Seismic Data with Noise Filtering</h2>
+                <div className="mt-10">
+                    <h2 className="text-2xl font-semibold mb-4">Seismic Data with Noise Filtering</h2>
+                    <div className="flex justify-center">
                     <LineChart
                         width={600}
                         height={300}
@@ -63,10 +64,12 @@ const Upload = () => {
                         <Line type="monotone" dataKey="velocity(c/s)" stroke="blue" />
                         <Line type="monotone" dataKey="filtered" stroke="red" />
                     </LineChart>
+                    </div>
 
-                    <h2>Spectrogram</h2>
-                    <img src={`http://127.0.0.1:5000/${spectrogram}`} alt="Spectrogram" />
-                    <button onClick={handleDownload}>Download Filtered Data</button>
+                    <h2 className="text-2xl font-semibold mt-8 mb-4">Spectrogram</h2>
+                    <img src={`http://127.0.0.1:5000/${spectrogram}`} alt="Spectrogram" className="border border-gray-300 shadow-lg rounded-lg"/>
+                    <button onClick={handleDownload} className="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300"
+                        >Download Filtered Data</button>
                 </div>
             )}
         </div>
