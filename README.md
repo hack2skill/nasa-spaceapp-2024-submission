@@ -5,6 +5,8 @@
 #### Team Leader Email - debshatachoudhury@gmail.com
 
 ## A Brief of the Prototype:
+Interact and Test the models here - https://exoplanetarium.netlify.app/
+<br>
 The idea presented in *EXOPLANETARIUM* by Team CODE4CHANGE is a powerful and innovative platform that brings together real-time data and advanced visualizations to explore exoplanets, making the vast universe more accessible to students, researchers, and enthusiasts alike.  
 <br>
 
