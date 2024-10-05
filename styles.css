@@ -1,0 +1,82 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set body background and overall styles */
+body {
+    background-image: url('assets/space_bg.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    font-family: 'Arial', sans-serif; /* Font family for the page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Align items vertically */
+    height: 100vh; /* Full viewport height */
+    color: #ffffff; /* Default text color */
+}
+
+/* Menu styles */
+#menu {
+    position: absolute; /* Position the menu above the canvas */
+    z-index: 10; /* Ensure the menu is above other elements */
+    text-align: center; /* Center text inside */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for menu */
+    padding: 30px; /* Padding for the menu */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    transition: transform 0.3s; /* Transition for scale effect */
+}
+
+#menu:hover {
+    transform: scale(1.05); /* Slightly enlarge menu on hover */
+}
+
+/* Game canvas styles */
+#gameCanvas {
+    display: block; /* Prevent inline spacing */
+    border: 4px solid rgba(255, 255, 255, 0.8); /* White border around the canvas */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 20px; /* Space above the canvas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+}
+
+/* Button styles */
+button {
+    background-color: #007BFF; /* Primary button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px 25px; /* Padding for the button */
+    font-size: 20px; /* Button font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+    margin: 10px; /* Space between buttons */
+    font-weight: bold; /* Bold text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #menu {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    button {
+        font-size: 18px; /* Adjust font size for buttons */
+        padding: 10px 20px; /* Adjust padding for buttons */
+    }
+
+    #gameCanvas {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 90%; /* Maximum width constraint */
+    }
+}
