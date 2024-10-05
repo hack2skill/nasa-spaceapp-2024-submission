@@ -1,0 +1,76 @@
+form.create--user {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+form.create--user input {
+    width: 100%;
+    background: rgba(39, 46, 57, 255);
+    padding: 10px 15px;
+    border-radius: 1px;
+    color: var(--text-white);
+    outline: none;
+    border: 1px solid transparent;
+}
+
+.title {
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.form--group-1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.form--group-2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form--group-2 select {
+    width: 100%;
+    background: rgba(39, 46, 57, 255);
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 1px;
+    color: grey;
+}
+
+.create--user-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(39, 46, 57, 255);
+    text-transform: uppercase;
+    font-size: small;
+    color: #ffffff;
+}
+.tools-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: red;
+}
+
+.tools-error .icon {
+    width: 15px;
+    height: 15px;
+}
+.error-message {
+    color: red;
+    font-size: small;
+}
