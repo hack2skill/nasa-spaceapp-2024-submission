@@ -28,8 +28,6 @@ This project stands out due to its unique combination of educational focus, arti
 <br>
 
 ## Code Execution Instruction:
-[If your solution is not application-based, you can ignore this section]  
-<br>
 
 ## How to Run the React Web Application  
 
