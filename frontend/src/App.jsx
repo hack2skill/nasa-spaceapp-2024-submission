@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import SeismicData from './SeismicData';
+import Upload from './Upload';
 
 function App() {
     return (
         <div className="App">
             <h1>Seismic Detection Platform</h1>
-            <SeismicData />
+            <Upload />
         </div>
     );
 }
