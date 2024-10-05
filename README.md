@@ -1,6 +1,3 @@
-Here’s the entire content formatted as a single **README.md** file, including the requested corrections and structure:
-
-```markdown
 # NASA Space Apps Challenge 2024 [Noida]
 
 #### Team Name - Nova TAG  
@@ -34,7 +31,7 @@ The solution focuses on making space education inclusive, offering multilingual 
 ## Code Execution Instruction:
 
 ### Direct Hosted Link: 
-[NovaTAG Live Site](https://nova-tag-5onx.vercel.app/)
+[Click here to visit the NovaTAG Live Site](https://nova-tag-5onx.vercel.app/)
 
 ### Pre-requisites:
 - Node.js and npm should be installed on your machine.
@@ -52,5 +49,3 @@ The solution focuses on making space education inclusive, offering multilingual 
    ```bash
    npm run dev
    ```
-
-```
