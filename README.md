@@ -1,8 +1,8 @@
 # NASA Space Apps Challenge 2024 [Noida] 🌌
 
-Team Name - code chefs
-Problem Statement - Navigator for the Habitable Worlds Observatory (HWO): Mapping the Characterizable Exoplanets in our Galaxy.
-Team Leader Email - sumeetmaurya85@gmail.com
+- Team Name - code chefs
+- Problem Statement - Navigator for the Habitable Worlds Observatory (HWO): Mapping the Characterizable Exoplanets in our Galaxy.
+- Team Leader Email - sumeetmaurya85@gmail.com
 
 ## A Brief of the Prototype:
 
