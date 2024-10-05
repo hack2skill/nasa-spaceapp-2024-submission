@@ -20,7 +20,7 @@ UPLOAD_FOLDER = 'uploads/'
 PROCESSED_FOLDER = 'processed_data/'
 ALLOWED_EXTENSIONS = {'csv'}
 
-cred = credentials.Certificate('./seismotrack-aa80c-firebase-adminsdk-cw0zv-13c8fa7db2.json')
+cred = credentials.Certificate('GOOGLE_APPLICATION_CREDENTIALS')
 firebase_admin.initialize_app(cred, {
     'storageBucket': 'seismotrack-aa80c.appspot.com'
 })
