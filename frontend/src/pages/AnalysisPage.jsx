@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-import React from 'react'
->>>>>>> cac3bf7d66b7a1123d005b6d54ca85f5637240c6
 import Upload from '../components/AnalysisPage/Upload'
 
 const AnalysisPage = () => {

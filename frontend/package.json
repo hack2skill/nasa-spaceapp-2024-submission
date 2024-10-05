@@ -16,12 +16,8 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
-<<<<<<< HEAD
     "recharts": "^2.12.7",
     "three": "^0.169.0"
-=======
-    "recharts": "^2.12.7"
->>>>>>> cac3bf7d66b7a1123d005b6d54ca85f5637240c6
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

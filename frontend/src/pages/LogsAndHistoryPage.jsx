@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -50,17 +49,3 @@ const LogsAndHistoryPage = () => {
 };
 
 export default LogsAndHistoryPage;
-=======
-import React from 'react'
-
-const LogsAndHistoryPage = () => {
-  return (
-    <div>
-        Log and History
-        
-    </div>
-  )
-}
-
-export default LogsAndHistoryPage
->>>>>>> cac3bf7d66b7a1123d005b6d54ca85f5637240c6
