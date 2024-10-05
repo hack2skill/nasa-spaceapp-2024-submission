@@ -39,22 +39,20 @@ Open your terminal and run the following command:
 git clone https://github.com/YourUsername/exoplanetarium.git  
 cd exoplanetarium
 This will download the project and move you into its directory.
-<br>
 
 Install Dependencies
 Once in the project directory, install the required dependencies using npm:
 
 npm install
 This command installs all the necessary packages for the application to run.
-<br>
+
 
 Start the Application
 After the dependencies are installed, start the development server with the following command:
 
 npm run dev
 This will start the local development server, allowing you to interact with the application in your browser.
-<br>
+
 
 Access the Application
-Open your web browser and navigate to http://localhost:3000 to view and interact with the Exoplanetarium platform.<br>
-<br>
+Open your web browser and navigate to http://localhost:3000 to view and interact with the Exoplanetarium platform.
