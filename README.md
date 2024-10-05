@@ -26,7 +26,6 @@ The solution focuses on making space education inclusive, offering multilingual 
 ## Direct Hosted link : https://nova-tag-5onx.vercel.app/
   ### Pre-requisites:
 #### Node.js and npm should be installed on your machine.
-#### Ensure that MongoDB is installed and running, or have access to a cloud-based MongoDB service.
-##### cd Nasa-Spaceapp-2024
+##### cd Novatag-official
 ##### npm install
 ##### npm run dev
