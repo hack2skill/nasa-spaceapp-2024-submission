@@ -2,7 +2,7 @@
 
 #### Team Name - Omniscient
 #### Problem Statement - Create Your Own Challenge
-#### Team Leader Email - anmolpandit38@gmail.com
+#### Team Leader Email - usaraids2023@gmail.com
 #### Github Email - mayank.091827@gmail.com
 
 ## A Brief of the Prototype:
