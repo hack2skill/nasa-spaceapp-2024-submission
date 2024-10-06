@@ -6,9 +6,28 @@
 Repositry link: https://github.com/SupriyaJaiswal43/Communitywatermapping
 Demo video link: https://youtube.com/watch?v=uPHUIZpWQ_0&feature=shared
 ## A Brief of the Prototype:
-  🌍 Water Quality Monitoring and Geocoding Application
+  VaranasiHydrotrack: Community Water Quality Mapping:
+Problem Definition:
+➢ Communities lack accessible tools to monitor, visualize, and share water quality data, making it difficult to identify and address water pollution issues
+effectively.
+Brief about the idea:
+Solution:
+➢ A comprehensive web-based platform that enables:
+➢ Real-time water quality data collection and visualization.
+➢ Community-driven pollution reporting.
+➢ Interactive mapping of water quality metrics.
+➢ Data-driven insights for environmental decision-making.
+Impact:
+➢ Empowers citizens to actively participate in water quality monitoring.
+➢ Facilitates data-driven environmental policy decisions.
+➢ Creates a transparent, community-led approach to water management.
+➢ Supports the UN's Sustainable Development Goal 6: Clean Water and Sanitation.
+Target Users:
+➢ Local community members.
+➢ Environmental scientists and researchers.
+➢ Policy makers and government officials.
+➢ Environmental protection agencies.
 
-This project is a Water Quality Monitoring and Geocoding Application that provides a comprehensive platform for mapping, visualizing, and analyzing water quality data. It leverages the power of OpenStreetMap, Nominatim, and Chart.js to offer users an interactive experience for submitting, visualizing, and interpreting water quality metrics.
 
 🚀 Features
 
