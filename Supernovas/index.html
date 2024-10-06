@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VANI - Voice Assistance for Navigation and Interaction</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet Routing Machine CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.css" />
+    <!-- SpeechKITT CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat-clouds.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Leaflet Routing Machine JS -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
+    <!-- Annyang JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+
+     <!-- AQI Widget JS -->
+     <script type="text/javascript" charset="utf-8">
+        (function(w, d, t, f) {
+            w[f] = w[f] || function(c, k, n) {
+                s = w[f], k = s['k'] = (s['k'] || (k ? ('&k=' + k) : '')); 
+                s['c'] = c = (c instanceof Array) ? c : [c]; 
+                s['n'] = n = n || 0; 
+                L = d.createElement(t), e = d.getElementsByTagName(t)[0]; 
+                L.async = 1; 
+                L.src = '//feed.aqicn.org/feed/' + (c[n].city) + '/' + (c[n].lang || '') + '/feed.v1.js?n=' + n + k; 
+                e.parentNode.insertBefore(L, e);
+            };
+        })(window, document, 'script', '_aqiFeed');
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <img src="server/nasa.gif" alt="NASA Logo">
+        <h1>VANI</h1>
+    </header>
+
+
+    <!-- Container for AQI widget -->
+    <div id="city-aqi-container"></div>
+
+    <div class="map-container">
+        <div class="history-box">
+            <h2>History</h2>
+            <ul id="history-list"></ul>
+        </div>
+        <!-- Search Bar with Mic Button -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Type a command" />
+            <button id="mic-button">🎙️</button>
+        </div>
+        <div id="map">
+            <div class="watermark">Supernovas</div>
+        </div>
+    </div>
+
+    <div id="distance"></div>
+
+    <footer>
+        <p>Available Commands:</p>
+        <div class="commands">
+            <span class="command-box" title="Say 'hello' to receive a greeting.">'hello'</span>
+            <span class="command-box" title="Say 'go to [city]' to navigate to a specific city.">'go to [city]'</span>
+            <span class="command-box" title="Show or hide vegetation layer.">'show vegetation'</span>
+            <span class="command-box" title="Show or hide highways layer.">'show highways'</span>
+            <span class="command-box" title="Switch to satellite view.">'show satellite'</span>
+            <span class="command-box" title="Switch to terrain view.">'show terrain'</span>
+            <span class="command-box" title="Zoom in on the map.">'zoom in'</span>
+            <span class="command-box" title="Zoom out on the map.">'zoom out'</span>
+            <span class="command-box" title="Mark a specific city on the map.">'mark [city]'</span>
+            <span class="command-box" title="Remove a marked city from the map.">'unmark [city]'</span>
+            <span class="command-box"
+                title="Calculate the distance between marked cities and display the route.">'calculate distance'</span>
+            <span class="command-box" title="Show pollution map with Air Quality Index">'show pollution'</span>
+            <span class="command-box" title="Show AQI widget for a city.">'show aqi of [city]'</span>
+            <span class="command-box" title="Close AQI widget.">'close aqi'</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
