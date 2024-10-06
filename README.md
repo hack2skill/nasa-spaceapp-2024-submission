@@ -1,13 +1,6 @@
-# NASA Space Apps Challenge 2024 [Noida]
+# Esri Landsat Viewer
+A web application to search, sort, filter and discover Landsat imagery.
 
-#### Team Name -
-#### Problem Statement - 
-#### Team Leader Email -
+![](./img/landsat-viewer.jpg)
 
-## A Brief of the Prototype:
-  What is your solution? and how it works.
-
-## Code Execution Instruction:
-  *[If your solution is **not** application based, you can ignore this para]
-  
- *The Repository must contain your **Execution Plan PDF**.
+![](./img/landsat-viewer-640.gif)

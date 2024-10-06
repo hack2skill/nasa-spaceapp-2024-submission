@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Landsat Viewer</title>
+    <meta http-equiv='content-type' content='text/html;charset=utf-8' />
+    <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta name='author' content='Esri' />
+    <meta name='keywords' content='landsat viewer 3d exploration temporal webgl sample' />
+    <meta name='description' content='Developer sample showing how to filter and select Landsat scenes.' />
+    <meta name='robots' content='index,follow' />
+
+    <link rel='shortcut icon' type='image/ico' href='img/favicon.ico'>
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' href='css/bootstrap-slider.min.css'>
+    <link rel='stylesheet' href='//js.arcgis.com/4.4/esri/css/main.css'>
+    <link rel='stylesheet' href='index.css'>
+
+    <script src='js/jquery-3.2.1.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src='js/bootstrap-slider.min.js'></script>
+    <script src='js/three.min.js'></script>
+    <script src='//js.arcgis.com/4.4/'></script>
+    <script src='index.js'></script>
+
+</head>
+<body>
+    <div id='map'></div>
+    <a id='logo-esri' target='_blank' href='https://www.esri.com'><img src='img/esri-white.png' height='53' /></a>
+    <div id='left-panel'>
+        <div id='banner'>
+            <div id='banner-text'>Landsat Viewer</div>
+        </div>
+        <div id='content'>
+            <div id='pages'>
+                <div class='rc-page' data-value='1'>
+                    <p>Define an area of interest by clicking the draw button below and dragging an extent on the globe.</p>
+                    <button id='button-draw' type='button' class='btn btn-primary rc-button'>Draw</button>
+                    <div id='buttons-help' class='btn-group'>
+                        <button id='button-help' type='button' class='btn btn-info rc-button' data-toggle='modal' data-target='#modal-help'>Help</button>
+                        <button id='button-about' type='button' class='btn btn-info rc-button' data-toggle='modal' data-target='#modal-about'>About</button>
+                    </div>
+                </div>
+                <div class='rc-page' data-value='2'>
+                    <p>Define the criteria for preview images.</p>
+                    <div>
+                        <div class='rc-heading'>Host</div>
+                        <div class='rc-value rc-host'>
+                            <div class='btn-group'>
+                                <button type='button' class='btn btn-primary dropdown-toggle rc-button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                    USGS <span class='caret'></span>
+                                </button>
+                                <ul class='dropdown-menu'>
+                                    <li data-host='usgs' class='active'><a href='#'>USGS</a></li>
+                                    <li data-host='esri'><a href='#'>Esri</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class='rc-heading'>Date</div>
+                        <div class='rc-value'>
+                            <input id='slider-date' type='text' />
+                        </div>
+                    </div>
+                    <div>
+                        <div class='rc-heading'>Cloud</div>
+                        <div class='rc-value'>
+                            <input id='slider-cloud' type='text' />
+                        </div>
+                    </div>
+                    <div>
+                        <div class='rc-heading'>Resolution</div>
+                        <div class='rc-value'>
+                            <input id='slider-resolution' type='text' />
+                        </div>
+                    </div>
+                    <div>
+                        <div class='rc-heading'>Satellites</div>
+                        <div id='satellites' class='rc-value'>
+                            <div class='checkbox'>
+                                <label><input data-sensor='oli' type='checkbox' checked>Landsat 8 OLI</label>
+                            </div>
+                            <div class='checkbox'>
+                                <label><input data-sensor='etm' type='checkbox' checked>Landsat 7 ETM+</label>
+                            </div>
+                            <div class='checkbox'>
+                                <label><input data-sensor='tm' type='checkbox'>Landsat 4-5 TM</label>
+                            </div>
+                            <div class='checkbox'>
+                                <label><input data-sensor='mss' type='checkbox'>Landsat 1-5 MSS</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class='rc-heading'>Download</div>
+                        <div class='rc-value'>
+                            <button id='button-start-download' type='button' class='btn btn-primary rc-button'><span class='glyphicon glyphicon-play' aria-hidden='true'></span> Start</button>
+                            <button id='button-cancel-download' type='button' class='btn btn-primary rc-button'><span class='glyphicon glyphicon-stop' aria-hidden='true'></span> Stop</button>
+                            <button id='button-clear' type='button' class='btn btn-primary rc-button'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span> Clear</button>
+                        </div>
+                    </div>
+                    <div id='download-progress'>
+                        <p></p>
+                        <div class='progress'>
+                            <div class='progress-bar progress-bar-striped active' role='progressbar'></div>
+                        </div>
+                    </div>
+                </div>
+                <div class='rc-page' data-value='3'>
+                    <p>Define the criteria for preview images.</p>
+                    <div>
+                        <div class='rc-heading-wide'>Date</div>
+                        <div class='rc-value'>
+                            <div class='btn-group' role='group'>
+                                <button data-field='date' data-order='ascending' type='button' class='btn btn-primary rc-button-small rc-sort-button'><span class='glyphicon glyphicon-chevron-up' aria-hidden='true'></span></button>
+                                <button data-field='date' data-order='descending' type='button' class='btn btn-primary rc-button-small rc-sort-button rc-active'><span class='glyphicon glyphicon-chevron-down' aria-hidden='true'></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class='rc-heading-wide'>Cloud</div>
+                        <div class='rc-value'>
+                            <div class='btn-group' role='group'>
+                                <button data-field='cloud' data-order='ascending' type='button' class='btn btn-primary rc-button-small rc-sort-button'><span class='glyphicon glyphicon-chevron-up' aria-hidden='true'></span></button>
+                                <button data-field='cloud' data-order='descending' type='button' class='btn btn-primary rc-button-small rc-sort-button'><span class='glyphicon glyphicon-chevron-down' aria-hidden='true'></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class='rc-heading-wide'>Sun Azimuth</div>
+                        <div class='rc-value'>
+                            <div class='btn-group' role='group'>
+                                <button data-field='sunAz' data-order='ascending' type='button' class='btn btn-primary rc-button-small rc-sort-button'><span class='glyphicon glyphicon-chevron-up' aria-hidden='true'></span></button>
+                                <button data-field='sunAz' data-order='descending' type='button' class='btn btn-primary rc-button-small rc-sort-button'><span class='glyphicon glyphicon-chevron-down' aria-hidden='true'></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class='rc-heading-wide'>Sun Altitude</div>
+                        <div class='rc-value'>
+                            <div class='btn-group' role='group'>
+                                <button data-field='sunAlt' data-order='ascending' type='button' class='btn btn-primary rc-button-small rc-sort-button'><span class='glyphicon glyphicon-chevron-up' aria-hidden='true'></span> </button>
+                                <button data-field='sunAlt' data-order='descending' type='button' class='btn btn-primary rc-button-small rc-sort-button'><span class='glyphicon glyphicon-chevron-down' aria-hidden='true'></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class='rc-heading-wide'>Swipe</div>
+                        <div class='rc-value'>
+                            <input id='slider-swipe' type='text' />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='rc-footer'>
+                <div class='btn-group' role='group'>
+                    <button id='button-previous' type='button' class='btn btn-primary rc-button'><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span> Previous</button>
+                    <button id='button-next' type='button' class='btn btn-primary rc-button'>Next <span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='modal-help' tabindex='-1' role='dialog' aria-labelledby='label1'>
+        <div class='modal-dialog modal-lg' role='document'>
+            <div class='modal-content rc-modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='label1'>How to use this App</h4>
+                </div>
+                <div class='modal-body'>
+                    <div class='embed-responsive embed-responsive-16by9'>
+                        <iframe id='player' src='https://www.youtube.com/embed/PBo51_m-5A0?rel=0' allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='modal-about' tabindex='-1' role='dialog' aria-labelledby='label2'>
+        <div class='modal-dialog' role='document'>
+            <div class='modal-content rc-modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='label2'>About this App</h4>
+                </div>
+                <div class='modal-body'>
+                    <p><img class='rc-center' src='img/esri-black.png' height='43' /></p>
+                    <p>This application was designed and developed by <a target='_blank' href='https://www.esri.com/'>Esri</a>'s <a target='_blank' href='https://geonet.esri.com/groups/applications-prototype-lab'>Applications Prototype Lab</a> in Redlands, California.</p>
+                    <p>The source code is available <a target='_blank' href='https://github.com/richiecarmichael/Esri-Landsat-Viewer'>here</a>.</p>
+                    <p>
+                        The application was built using the following technologies:
+                        <ul style='margin-left: -20px;'>
+                            <li><a target='_blank' href='https://developers.arcgis.com/javascript/'>ArcGIS API for JavaScript</a> by <a target='_blank' href='https://www.esri.com'>Esri</a></li>
+                            <li><a target='_blank' href='https://getbootstrap.com/'>Bootstrap</a> by <a target='_blank' href='https://twitter.com/'>Twitter Inc.</a></li>
+                            <li><a target='_blank' href='https://github.com/seiyria/bootstrap-slider'>Bootstrap Slider</a> by <a target='_blank' href='https://github.com/seiyria'>Kyle J. Kemp</a></li>
+                            <li><a target='_blank' href='https://jquery.com/'>jQuery</a> by the jQuery Foundation Inc.</li>
+                            <li><a target='_blank' href='https://threejs.org/'>three.js</a> by <a target='_blank' href='https://github.com/mrdoob'>Mr.doob</a></li>
+                        </ul>
+                    </p>
+                    <p>The <a target='_blank' href='https://www.usgs.gov/'>USGS</a>'s <a target='_blank' href='https://landsat.usgs.gov/'>Landsat program</a> has been imaging the Earth for the past 45 years (see <a target='_blank' href='https://en.wikipedia.org/wiki/Landsat_program'>wiki</a>). Click <a target='_blank' href='https://www.esri.com/software/landsat-imagery'>here</a>, <a target='_blank' href='https://www.esri.com/landing-pages/software/landsat/unlock-earths-secrets'>here</a> and <a target='_blank' href='https://www.arcgis.com/home/item.html?id=d9b466d6a9e647ce8d1dd5fe12eb434b'>here</a> to learn more about the Landsat imagery hosted by Esri and specifically the recently announced <a target='_blank' href='http://landsatexplorer.esri.com/'>Landsat Explorer</a> app.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='modal-download' tabindex='-1' role='dialog' aria-labelledby='label3'>
+        <div class='modal-dialog modal-sm' role='document'>
+            <div class='modal-content rc-modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='label3'>Download</h4>
+                </div>
+                <div class='modal-body'></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
