@@ -29,6 +29,8 @@ This project is an interactive, web-based visualization of our solar system, cre
    - Click the "-" button to zoom out
 4. Click on any planet to view its name and orbit radius.
 5. Click anywhere else to close the planet information popup.
+##Just install live server extension on vs code and run the index.htmnl file on it and enjoy
+
 
 ## Technical Details
 
@@ -64,5 +66,3 @@ This visualization should work in all modern web browsers that support HTML5 Can
 ## Credits
 
 This Solar System Visualization was created as an educational project. Planet images and astronomical data are based on publicly available information from NASA and other space agencies.
-
-Just install live server extension on vs code and run the index.htmnl file on it and enjoy
