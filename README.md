@@ -10,6 +10,6 @@ Your challenge is to develop an easy-to-use, web-based application that supports
 ## A Brief of the Prototype:
 A web application to search, sort, filter and discover Landsat imagery.
 
-![](./landsat-viewer.jpg)
+![](./landsat.jpg)
 
 ![](./landsat-viewer-640.gif)
