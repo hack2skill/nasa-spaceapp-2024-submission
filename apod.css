@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:linear-gradient(65deg,#2e3192,#a3a6ff 50.1%);
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+.hero{
+    height:100vh;
+    width:100%;
+    background:linear-gradient(65deg,#2e3192,#a3a6ff 50.1%);
+  }
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:40px;
+    padding-left:10%;
+    padding-right:10%;
+}
+.logo{
+    color:white;
+    font-size:28px;
+}
+nav ul li{
+    list-style-type: none;
+    display:inline-block;
+    padding:10px 20px;
+}
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav ul li a:hover{
+    color:red;
+    transition:.3s;
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #fec316;
+    margin-bottom: 20px;
+    margin-top:80px;
+    font-size: 2.5em;
+
+}
+
+/* Form Container */
+.container{
+   
+    justify-content: center;
+    padding:10px;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:60px;
+    align-items:center;
+}
+/* Label and Input Styles */
+label {
+    font-size: 1.5em;
+    color: #fff;
+   margin-left:10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 50%;
+    margin-left:5px;
+   
+}
+
+/* Button Styles */
+input[type="button"] {
+    padding: 10px 30px;
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+  
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Error Styles */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+#display{
+    border:5px solid  #45a049;  
+    border-radius:20px;
+    justify-content: center;
+    align-items:center;
+    width:90%;
+    position:absolute;
+    margin-top:50px;
+    padding:20px;
+    margin-right:auto;
+    margin-left:2%;
+    background-color:black;
+    color:white;
+    
+}
+#display h2{
+    color:white;
+    width:fit-content;
+    margin:auto;
+    justify-content: center;
+    align-items:center;
+    padding:10px;
+    align-self:center;
+    margin:auto;
+    margin-bottom:5px;
+}
+#display img{
+    
+    border:2px solid white;
+    width:100%;
+    border-radius:20px;
+    margin:auto;
+    justify-content: center;
+    align-items:center;
+}
+#display p{
+    border:2px solid white;
+    border-radius:20px;
+    padding:10px;
+    width:fit-content;
+    margin-top:25px;
+}

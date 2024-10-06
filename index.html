@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyro - NASA Space Apps Challenge 2024</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+</head>
+<body>
+    
+    <div class="video-container">
+      
+        <video id="myVideo" autoplay loop   >
+            <source src="videos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+   
+    <div class="overlay" id="overlay">
+        
+        <h1>Pyro</h1>
+        <p>Immersive Video Experience</p>
+    </div>
+    
+   
+    <div class="content">
+        <h1>Pyro</h1>       
+       <p>Pyro is creative and immersive website.With its unique design It will help the viewers to look at the images taken by the JWST through <br>a new perspective and it will simulates their minds with its amazing background score designed by combining two tracks</p>
+        <!-- Use a button to pause/play the video with JavaScript -->
+        <button id="myBtn" onclick="myFunction()">Play</button>
+      </div>
+    <div class="container">
+       
+        <a href="videogallery.html">
+        <div class="arr down">
+            <div></div>
+        </div>
+    </a>
+    </div>
+  
+
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <script>
+    
+
+   
+        setTimeout(function() {
+            document.getElementById('overlay').style.display = 'none';
+        }, 6000); 
+        
+        
+    </script>
+  
+  <script>
+    // Get the video
+    var video = document.getElementById("myVideo");
+    
+    // Get the button
+    var btn = document.getElementById("myBtn");
+    
+    // Pause and play the video, and change the button text
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+    </script>
+             
+           
+
+
+
+</body>
+</html>

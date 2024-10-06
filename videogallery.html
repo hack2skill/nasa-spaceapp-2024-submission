@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale-1.0">
+      <link rel="stylesheet" href="style-video.css">
+      
+    </head>
+    <body>
+      
+        <a  class="move-up" href="index.html">
+            <span class="mouse1">
+                <span class="mouse-wheel1"></span>
+            </span>
+        </a>
+        
+
+    <div class="container">
+        <div class="video-list">
+        <video class="active" src="videos/video1.mp4" poster="images/img6.jpg" muted></video>
+        <video src="videos/video4.mp4" poster="images/img13.jpg" muted ></video>
+        <video src="videos/video2.mp4" poster="images/img9.jpg" muted></video>
+        <video src="videos/video3.mp4"  poster="images/img14.jpg" muted></video>
+        <video src="videos/video5.mp4" poster="images/img16.jpg" muted ></video>
+       
+        </div>
+   
+    <div class="main-video">
+        <video src="videos/video1.mp4" muted controls></video>
+    </div>
+   
+    </div>
+    
+    <a class="move-down" href="gallery.html">
+    <span class="mouse2">
+        <span class="mouse-wheel2"></span>
+    </span>
+    </a>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $('.video-list video').click(function(){
+  $(this).addClass('active').siblings().removeClass('active');
+  let src=$(this).attr('src')
+  $('.main-video video').attr('src',src);
+        });
+    </script>
+</html>
