@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #000;
+    color:#1F51FF;
+}
+
+#loading {
+    position: fixed; /* Keep it in place */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centering effect */
+    text-align: center; /* Center the text */
+    color: white; /* Change text color */
+    font-size: 24px; /* Adjust font size */
+    z-index: 1000; /* Make sure it appears above other elements */
+}
+
+#progress-bar {
+    width: 100%; /* Full width of the parent */
+    max-width: 600px; /* Set a maximum width */
+    background-color: rgba(255, 255, 255, 0.5); /* Background for the progress bar */
+    margin: 10px auto 0; /* Center and add margin above */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Ensure progress fill doesn't overflow */
+}
+
+#progress-fill {
+    width: 0%; /* Initial width for the fill */
+    height: 20px; /* Height of the progress bar */
+    background-color: #4caf50; /* Fill color */
+    transition: width 0.3s ease; /* Smooth transition for width change */
+}
+
+#scene-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color:#1F51FF;
+}
+
+#details {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.widget {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.widget:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#left-widget {
+    top: 20px;
+    left: 20px;
+}
+
+#right-widget {
+    top: 20px;
+    right: 20px;
+}
+
+#controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.material-button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+}
+
+.material-button .material-icons {
+    font-size: 50px; 
+    margin-right: 5px; 
+}
+
+.material-button:hover {
+    background: #0056b3;
+}
+
+.widget {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    z-index: 30;
+    font-family: 'Orbitron';
+}
+
+.material-icons {
+    font-size: 24px; 
+}
+
+#left-widget {
+    left: 20px;
+    top: 20px;
+}
+
+#right-widget {
+    right: 20px;
+    top: 20px;
+}
+
+input[type="range"] {
+    width: 100px;
+}
+
+.planet-label {
+    position: absolute;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    pointer-events: none;
+    text-shadow: 0 0 5px #000;
+    transform: translate(-50%, -50%);
+    color:#1F51FF;
+}
