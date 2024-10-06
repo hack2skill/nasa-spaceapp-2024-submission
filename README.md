@@ -13,56 +13,6 @@ Visualization: The frontend displays this data on an interactive Leaflet.js map,
 Seamless Interaction: Users can interact with the data visually through a simple interface, making satellite data accessible for non-experts in real-time.
 
 ## Code Execution Instruction:
-Clone the Repository:
-Clone the project repository from GitHub to your local machine:
-bash
-Copy code
-git clone <repository-url>
-Setting up the Backend (Flask):
-
-Navigate to the backend directory:
-bash
-Copy code
-cd backend
-Create a virtual environment:
-bash
-Copy code
-python -m venv venv
-Activate the virtual environment:
-For Windows:
-bash
-Copy code
-venv\Scripts\activate
-For Mac/Linux:
-bash
-Copy code
-source venv/bin/activate
-Install required Python packages:
-bash
-Copy code
-pip install -r requirements.txt
-Run the Flask server:
-bash
-Copy code
-flask run
-Setting up the Frontend (React):
-
-Navigate to the frontend directory:
-bash
-Copy code
-cd frontend
-Install dependencies:
-bash
-Copy code
-npm install
-Start the React development server:
-bash
-Copy code
-npm start
-Access the Application:
-
-The React frontend will be available at: http://localhost:3000
-The Flask backend will be running at: http://localhost:5000
 Testing the Application:
 
 Open the frontend in your browser, click the "Fetch Data" button to visualize the reflectance data on the map and chart.
