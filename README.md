@@ -10,5 +10,5 @@ Textures are used for earth, sun and carina nebula from the Webb Telescope image
 ## Code Execution Instruction:
   *[If your solution is **not** application based, you can ignore this para]
   There are all the nodejs codes. The Exceuction Plan PDF is also attached for the idea presentation
+  This also includes the self composed music track named "Starry Goodbye" if the client blocks the website from playing the audio. Music Componsing files for FL Studio and Musescore are also added
   
- *The Repository must contain your **Execution Plan PDF**.
