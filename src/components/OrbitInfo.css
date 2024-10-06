@@ -1,0 +1,74 @@
+/* OrbitInfo.css */
+
+.orbit-info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #001520;  /* Dark background matching the theme */
+    color: white;
+  }
+  
+  .content-container {
+    flex: 1;
+    padding-right: 20px;
+    position: relative;
+  }
+  
+  .decorative-number {
+    font-size: 120px;
+    color: rgba(255, 255, 255, 0.05);  /* Faint background number */
+    position: absolute;
+    top: -10px;
+    left: 0;
+    font-weight: bold;
+    z-index: -1;
+  }
+  
+  .section-subtitle {
+    font-size: 18px;
+    color: #F9C74F;  /* Accent color similar to gold */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  
+  .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .section-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .read-more-link {
+    font-size: 16px;
+    color: #F9C74F;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .read-more-link span {
+    cursor: pointer;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .read-more-link:hover span {
+    transform: translateX(5px);
+  }
+  
+  .image-container {
+    flex: 1;
+  }
+  
+  .telescope-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  

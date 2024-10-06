@@ -1,0 +1,73 @@
+  .hero {
+    position: relative;
+    background-image: url('../assets/images/hero-image.jpg');
+    background-size: cover;
+    /* background-position: center; */
+    height: 150vh;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Positioning for the content inside the hero section */
+  .hero-content {
+    font-family: 'Abhaya Libre Medium';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+
+  .subheading {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f0e68c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .scroll-down {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scroll-down p {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  .scroll-down svg {
+    animation: bounce 2s infinite;
+    cursor: pointer;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+  }
+/*   
+  /* Responsive adjustments 
+  @media (min-width: 1024px) {
+    .hero {
+      height: 150vh; /* Adjust height for larger screens 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 100vh; /* Adjust height for smaller screens 
+    }
+  }
+   */

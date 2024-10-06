@@ -1,0 +1,83 @@
+/* Footer.css */
+
+.footer {
+    background-color: #001520; /* Dark background to match the space theme */
+    padding: 40px 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+  }
+  
+  .footer-left {
+    flex: 1;
+  }
+  
+  .footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f9c74f; /* Accent color */
+  }
+  
+  .footer-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-nav a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .footer-nav a:hover {
+    color: #f9c74f; /* Highlight on hover */
+  }
+  
+  .footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin-left: 15px;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #f9c74f;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    font-size: 14px;
+    color: #aaa;
+    margin: 0;
+  }
+  

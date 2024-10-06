@@ -1,0 +1,42 @@
+.header {
+    background-image: url('../assets/images/image\ 2.jpg');
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 0 20px;
+    background-color: #000; 
+    height: 100px;  
+    z-index: 999;
+  }
+  
+  .logo {
+    font-family: 'Abhaya Libre ExtraBold';
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .nav-wrapper {
+    display: flex;
+    flex-grow: 1; 
+    justify-content: center; 
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px; 
+  }
+  
+  .nav-links a {
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;  
+    font-weight: normal;
+    padding: 10px 0;
+  }
+  
+  .nav-links a:hover {
+    color: #ffd700;
+  }
+  
