@@ -16,59 +16,64 @@ In essence, the application empowers farmers by simplifying access to complex da
 
 ### Clone the Repository
 
-bash
+```bash
 git clone https://github.com/Senpai-489/Farmingo.git
-
+```
 
 ## Deployed Website :
 # Website URL : "https://farmingofrontend-leq2.vercel.app"
 
-# Use 
+## Use 
 `Username - admin@gmail.com`
 `Password- admin`
+
 ## -Running the Application-
 
 ### On local machine:
 #### 1) Install the packages for Front-End:
 
-bash
+```bash
 cd client
 npm i
+```
 
 #### 2) Install the packages for Back-End : 
-bash
+```bash
 cd server
 npm i
+```
 
 #### 3) Create a .env file in Farmingo/server: 
-text
+```text
 PORT=7600
 JWT_KEY = <Add your key>
 ORIGIN = "http://localhost:5173"
 DATABASE_URL = <Add your Mongo_connection_string>
+```
 
 #### 4) Create a .env file in Farmingo/client: 
 - If running on local machine:
-text
+```text
 VITE_SERVER_URL = "http://localhost:7600"
 Edit HOST in client/src/utils/constants.js as:
 export const HOST = import process.env.metadata.VITE_SERVER_URL
-
+```
 - Else use our backend API: Already set as default in client/src/utils/constants.js
     
 
 #### 5) Run client :
 From root directory i.e; Farmingo:
-bash
+```bash
 cd client
 npm run dev
+```
 
 #### 5) Run server :
 From root directory i.e; Farmingo:
-bash
+```bash
 cd server
 npm run dev
-
+```
 
 ## Your Website is running on local machine
 
