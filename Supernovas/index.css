@@ -1,0 +1,225 @@
+/* General reset for styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    /* Futuristic font */
+    background: url('server/space-background.jpg') no-repeat center center fixed;
+    /* Space background */
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #fff;
+    width: 100%;
+}
+
+header img {
+    width: 80px;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00bfff;
+    /* NASA-like light blue */
+    text-shadow: 0px 0px 15px #00bfff;
+}
+
+.map-container {
+    width: 90%;
+    height: 65vh;
+    margin: 20px 0;
+    position: relative;
+    display: flex;
+    /* Flexbox for positioning */
+}
+
+#map {
+    flex: 1;
+    /* Map takes remaining space */
+    height: 100%;
+    border: 3px solid #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+/* History box on the left side */
+.history-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 250px;
+    max-height: 200px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.5);
+    overflow-y: auto;
+    z-index: 1000;
+    /* Ensure it stays on top */
+}
+
+.history-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #00bfff;
+}
+
+.history-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    max-height: 160px;
+    /* Adjust height to fit box */
+    overflow-y: auto;
+    /* Scroll when content exceeds */
+}
+
+.history-box ul li {
+    margin-bottom: 10px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #00bfff;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Distance box on the right side */
+#distance {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0px 0px 15px rgba(0, 191, 255, 0.7);
+    z-index: 1000;
+}
+
+/* Coordinates display (below distance) */
+#coordinates {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0px 0px 15px rgba(0, 191, 255, 0.7);
+    z-index: 1000;
+}
+
+
+.watermark {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+    z-index: 1000;
+    opacity: 70%;
+}
+
+
+footer {
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    color: #fff;
+    border-top: 2px solid #00bfff;
+}
+
+footer p {
+    font-size: 1.2rem;
+}
+
+footer .commands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer .command-box {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #00bfff;
+    box-shadow: 0px 0px 10px rgba(0, 191, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+footer .command-box:hover {
+    background: #00bfff;
+    color: #fff;
+    box-shadow: 0px 0px 15px #fff;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    z-index: 1000;
+
+    position: absolute;
+    top: 20px;
+    right: 30%;
+
+
+
+    z-index: 1000;
+    /* Ensure it stays on top */
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#mic-button {
+    background-color: #ffffff;
+    color: white;
+    font-size: 26px;
+    border-color: #ff0000;
+    border-radius: 50%;
+
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+#mic-button:hover {
+    background-color: #ff0000;
+}
