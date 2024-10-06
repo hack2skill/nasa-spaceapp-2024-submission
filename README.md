@@ -16,6 +16,7 @@ Seamless Interaction: Users can interact with the data visually through a simple
 Testing the Application:
 
 Open the frontend in your browser, click the "Fetch Data" button to visualize the reflectance data on the map and chart.
+  
   *[If your solution is **not** application based, you can ignore this para]
   
  *The Repository must contain your **Execution Plan PDF**.
