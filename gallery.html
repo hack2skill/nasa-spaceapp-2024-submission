@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-gallery.css">
+    <link rel="stylesheet" href="contact.css">
+    <style>
+     
+    </style>
+</head>
+<body >
+   <div class="hero">
+      <nav>
+          <h2 class="logo">Pyro</h2>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="videogallery.html">Video Gallery</a></li>
+              <li><a href="gallery.html">Photo Gallery</a></li>
+              <li><a href="PictureOfDay.html">Picture of Day</a></li>
+              <li><a href="Contact.html">Contact Us</a></li>
+          </ul>
+        
+      </nav>
+   
+        <div class="cont" >
+          <div class="panel active" style="background-image:url(images/img1.jpg);">
+             <h1>expanding cards</h1>
+          </div>
+          <div class="panel" style="background-image:url(images/img2.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+         <div class="panel" style="background-image:url(images/img3.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+         <div class="panel" style="background-image:url(images/img4.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+         <div class="panel" style="background-image:url(images/img5.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+         <div class="panel" style="background-image:url(images/img6.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+         <div class="panel" style="background-image:url(images/img7.gif);">
+          <h1>expanding cards</h1>
+       </div>
+         <div class="panel" style="background-image:url(images/img8.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+         <div class="panel" style="background-image:url(images/img9.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+         <div class="panel" style="background-image:url(images/img10.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+         <div class="panel" style="background-image:url(images/img11.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+         <div class="panel " style="background-image:url(images/img12.jpg);">
+            <h1>expanding cards</h1>
+         </div>
+       </div>
+       <div class="container" >
+        <a href="videogallery.html">
+        <div class="arr down">
+            <div></div>
+        </div>
+    </a>
+    </div>
+    </div>
+     <p>&copy; 2024 Team Pyro - Aditya Yadav. All rights reserved.</p>
+</body>
+<script>
+     const panels = document.querySelectorAll(".panel");
+
+panels.forEach((panel) => {
+   panel.addEventListener("click", () => {
+      removeActiveClass();
+      panel.classList.add("active");
+   });
+});
+
+function removeActiveClass() {
+   panels.forEach((panel) => {
+      panel.classList.remove("active");
+   });
+}
+</script>
+</html>

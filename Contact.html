@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="contact.css">
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "TeiQVrA9LXDYpyt3I",
+      });
+   })();
+</script>
+
+
+</head>
+<body>
+
+
+    <div class="hero">
+        <nav>
+            <h2 class="logo">Pyro</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="videogallery.html">Video Gallery</a></li>
+                <li><a href="gallery.html">Photo Gallery</a></li>
+                <li><a href="PictureOfDay.html">Picture of Day</a></li>
+                <li><a href="Contact.html">Contact Us</a></li>
+                
+            </ul>
+          
+        </nav>
+          
+<form onsubmit="emailSend();reset();return false;">
+    <div class="container">
+      <h2>Subscribe For Daily New Picture from NASA </h2>
+      <p>Please fill the Name and Email so that you receive a new image from NASA daily!</p>
+    </div>
+  
+    <div class="container" style="background-color:white">
+      <input type="text" placeholder="Name" name="name" id="name" required>
+      <input type="text" placeholder="Email address" name="email" id="email" required>
+      <label>
+        <input type="checkbox" checked="checked" name="subscribe" id="subscribe"> Receive Picture of Day
+      </label>
+    </div>
+  
+    <div class="container">
+      <input type="submit" value="Subscribe">
+    </div>
+  </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="email.js"></script>
+ 
+</body>
+</html>
