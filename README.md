@@ -3,6 +3,7 @@
 #### Team Name - Aether
 #### Problem Statement - Symphony of the Stars
 #### Team Leader Email - madhurbarnwal123@gmail.com
+#### Website Link - [madhurbarnwal123@gmail.com](https://symphonyofstars.netlify.app/)
 
 ## A Brief of the Prototype:
 A web app integrating original music with interactive 3D animations to bring the James Webb Space Telescope’s discoveries to life.  Designed to captivate and educate audiences of all ages, it combines dynamic animations with a custom-composed score to deepen understanding and inspire wonder about the universe.
