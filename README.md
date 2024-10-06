@@ -1,7 +1,7 @@
 # NASA Space Apps Challenge 2024 [Noida]
 
 #### Team Name - Cosmic Hactivists
-#### Problem Statement - 
+#### Problem Statement - Seismic Detection Across the Solar System
 #### Team Leader Email - aagamcshah172005@gmail.com
 
 # Seismic Signal Analysis System
@@ -61,11 +61,3 @@ Start the React development server:
 bash
 
 npm run dev
-
-### Repository Structure
-
-
-## Code Execution Instruction:
-  *[If your solution is **not** application based, you can ignore this para]
-  
- *The Repository must contain your **Execution Plan PDF**.
