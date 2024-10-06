@@ -23,7 +23,7 @@ git clone https://github.com/Senpai-489/Farmingo.git
 ## Deployed Website :
 # Website URL : "https://farmingofrontend-leq2.vercel.app"
 
-#use 
+# Use 
 `Username - admin@gmail.com`
 `Password- admin`
 ## -Running the Application-
