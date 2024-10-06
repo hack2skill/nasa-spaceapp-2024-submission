@@ -31,8 +31,8 @@ The proposed solution is a **Seismic Signal Analysis System** that processes sei
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/AAGAM17/nasa-spaceapp-2024-submission.git
+   cd nasa-spaceapp-2024-submission
 Set Up the Backend:
 
 Navigate to the backend directory:
