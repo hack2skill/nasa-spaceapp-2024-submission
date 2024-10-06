@@ -14,7 +14,7 @@ The platform consists of three core components:
 Target Location and Overpass Notification Setup
 Real-time Landsat Pixel Data Retrieval
 Automated Notifications
-##########How it Works
+### How it Works
 #### 1. Target Location and Overpass Notification Setup
 Users begin by selecting or inputting a target location. This input can be a latitude/longitude coordinate or a direct selection on an interactive map. Once the location is set, our platform determines when the next Landsat satellite will pass over the area by querying services such as the CelesTrak API. CelesTrak provides orbital parameters that can be used to predict satellite positions, enabling us to determine overpass times based on user-defined coordinates. With the overpass time calculated, users can set lead times (e.g., 1 day, 1 hour) before the satellite's expected arrival and choose their preferred notification method, either email or SMS.
 
