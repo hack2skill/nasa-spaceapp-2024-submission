@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        /* Body styling with a gradient background and a background image */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            background: 
+                linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.8)), /* Black to Dark Gray */
+                url('WhatsApp Image 2024-10-06 at 06.26.26_ad00a55e.jpg') no-repeat center center fixed; /* Add your background image URL here */
+            background-size: cover; /* Ensure the image covers the entire viewport */
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+            text-align: center;
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navbar styling */
+        .navbar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.9); /* Darker overlay for navbar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: #f0f0f0; /* Light gray for links */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Content wrapper */
+        .content-wrapper {
+            padding: 20px;
+            margin-top: 70px;
+        }
+
+        /* Text styles */
+        h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 
+                         0 0 20px rgba(0, 255, 255, 0.7); /* Light cyan shadow */
+        }
+
+        p {
+            font-size: 24px;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 
+                         0 0 15px rgba(0, 255, 255, 0.5); /* Light cyan shadow */
+        }
+
+        /* GLOBE Quest Section */
+        .globe-quest {
+            margin-top: 30px;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .globe-quest h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #f0f0f0; /* Light gray for the title */
+        }
+
+        /* Button styles */
+        .logout-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.9); /* Almost black for button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: rgba(0, 0, 0, 1); /* Darker on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <ul>
+            <li><a href="/profiles.html">Profile</a></li>
+            <li><a href="characters[1]\characters.html">Characters</a></li>
+            
+            <li><a href="/about.html">Contact</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="#" onclick="redirectToTeamFormation()">My Team</a></li>
+            <li><a href="battle.html">Battle</a></li>
+
+        </ul>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Welcome Section -->
+        <h1>Welcome, <span id="username"></span>!</h1>
+        <p>You have successfully logged in.</p>
+        <button class="logout-btn" id="start-quest-btn">START QUEST</button>
+        
+
+        <!-- GLOBE Quest Section -->
+        <div class="globe-quest">
+            <h2>Welcome to GLOBE Quest</h2>
+            <p>GLOBE Quest is an interactive game designed to educate students about environmental issues using GLOBE protocols. 
+            Through engaging storytelling and competitive challenges, students explore their local environments, gather data, 
+            and contribute to global scientific research. Join us to embark on an exciting journey of environmental discovery 
+            and make a real-world impact!</p>
+        </div>
+    </div>
+
+    <script>
+        // Define the redirect function globally
+        function redirectToTeamFormation() {
+            const username = document.getElementById("username").textContent;
+            if (username) {
+                window.location.href = `team_formation.html?username=${username}`;
+            } else {
+                alert("Username is not available.");
+            }
+        }
+
+        // Fetch team data with detailed logging
+        async function fetchTeamData(username) {
+            try {
+                const response = await fetch(`http://localhost:3000/user/getTeam?username=${username}`);
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch team data. Status: ${response.status}`);
+                }
+
+                const data = await response.json(); // Parse the response to JSON
+
+                // Log the entire response to understand its structure
+                console.log("Raw team data response:", data);
+
+                // Check if the expected data is present
+                if (data.check && data.team) {
+                    return data.team; // Return the team data
+                } else {
+                    throw new Error('Invalid team data received');
+                }
+
+            } catch (error) {
+                console.error("Error fetching team data:", error.message);
+                alert("Could not retrieve team data. Please try again later.");
+                return null;
+            }
+        }
+
+        // Handle START QUEST button click
+        document.getElementById('start-quest-btn').addEventListener('click', async () => {
+            const username = document.getElementById("username").textContent;
+            if (!username) {
+                alert("Username is not available.");
+                return;
+            }
+
+            const teamData = await fetchTeamData(username);
+            if (teamData) {
+                const teamName = teamData.teamName;
+                const teamScore = teamData.score;
+                // Redirect to global.html with team name and score as query parameters
+                window.location.href = `/globe.html?teamName=${encodeURIComponent(teamName)}&teamScore=${teamScore}`;
+            }
+        });
+
+        // Populate username on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const username = params.get("username"); // Extract "username" from query parameter
+            document.getElementById("username").textContent = username;
+        });
+    </script>
+</body>
+</html>

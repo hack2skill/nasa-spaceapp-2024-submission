@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Character Selection</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            text-align: center;
+            background-color: #222; /* Dark background color */
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            position: absolute; /* Positioning for the button */
+            top: 20px; /* Distance from the top */
+            left: 20px; /* Distance from the left */
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+        }
+
+        /* Character Box Styles */
+        .character-box {
+            display: inline-block;
+            width: 300px; /* Increased width */
+            height: 400px; /* Added height for uniformity */
+            margin: 1rem;
+            padding: 1.5rem; /* Increased padding */
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .character-box:hover {
+            transform: scale(1.05);
+        }
+
+        .character-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+            padding-top: 60px; /* Place content 60px from the top */
+        }
+
+        .modal-content {
+            background-color: #222;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            color: white;
+            border-radius: 10px;
+            text-align: left;
+            position: relative; /* Position for absolute elements */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Select Button */
+        .select-btn {
+            background-color: #ff6f61;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block; /* Change to block for centering */
+            margin: 1rem auto; /* Center the button */
+            text-align: center; /* Center text */
+        }
+
+        .select-btn:hover {
+            background-color: #ff4b47;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='welcome.html'">← Back</button> <!-- Back Button -->
+    <h1>Select Your Character</h1>
+    <div class="character-container">
+        <div class="character-box" id="character1" onclick="showCharacterDetails(0)">
+            <img class="character-image" src="image1.jpg" alt="Character 1">
+            <h3>Aria Nova</h3>
+        </div>
+        <div class="character-box" id="character2" onclick="showCharacterDetails(1)">
+            <img class="character-image" src="image2.png" alt="Character 2">
+            <h3>Kael Windrunner</h3>
+        </div>
+    </div>
+
+    <!-- Modal for character details -->
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="characterName"></h2>
+            <p id="characterDescription"></p>
+            <h4>Backstory:</h4>
+            <p id="characterBackstory"></p>
+            <button class="select-btn" id="selectButton" onclick="selectCharacter()">Select Character</button>
+        </div>
+    </div>
+
+    <script>
+        // Character data
+        const characters = [
+            {
+                name: 'Aria Nova',
+                description: 'Aria Nova is a striking figure in her mid-20s, with piercing blue eyes that reflect her determination and a shock of silver hair that hints at her futuristic origins. She dons a sleek, form-fitting suit embedded with advanced technology, allowing her to blend into any environment while remaining agile in her movements. A multi-functional wrist device enables her to analyze data, communicate with allies, and manipulate her surroundings, making her a formidable opponent. Aria carries a deep sense of responsibility for her mission, driven by the memories of her lost family and the environmental collapse of her time. With a blend of intelligence, resourcefulness, and unwavering resolve, she embodies the hope for a better future.',
+                backstory: 'In the year 2147, Earth faced catastrophic environmental collapse, leading to devastating droughts and rising sea levels that claimed countless lives, including those of Aria Nova\'s family. As a last hope, her mother, Dr. Elara Nova, discovered a way to create a time portal and sent Aria back to 2024, hoping to change the course of history. Armed with advanced technology and knowledge of the future, Aria quickly assimilated into the past, rallying a group of passionate environmental activists called "The Guardians." Together, they launched initiatives to promote sustainability and combat the interests of the powerful Genesis Corp, which thrived on exploiting Earth\'s resources. As public awareness grew, Aria orchestrated a massive protest that ignited a global movement, drawing attention to the urgency of climate action. In a climactic showdown, Aria confronted the CEO of Genesis Corp, revealing the dire consequences of their actions and ultimately galvanizing society to embrace a more sustainable future.',
+                image: 'image1.jpg' // Ensure the image path is correct
+            },
+            {
+                name: 'Kael Windrunner',
+                description: 'Kael Windrunner is an enigmatic figure in his early 30s, standing tall with an athletic build and an aura of confidence. His striking emerald-green eyes reflect both wisdom and a hint of mischief, framed by tousled black hair that flows like the wind. Clad in lightweight, weather-resistant armor adorned with intricate patterns that mimic the natural elements, Kael is a master of stealth and agility. He carries a finely crafted bow slung across his back, complemented by a quiver of arrows, each tipped with unique enhancements from ancient knowledge. His deep, resonant voice carries a calming presence, and he possesses a keen intellect, allowing him to strategize and adapt in any situation. With a strong connection to nature and the wind, Kael moves with a grace that makes him both a guardian of the wilds and a formidable opponent in battle.',
+                backstory: 'Kael Windrunner was born in the tranquil village of Eldoria, nestled within the vast forests of the Enchanted Realm, where harmony with nature reigned supreme. From a young age, he exhibited an uncanny ability to communicate with the winds and animals, earning him the title of "Wind Whisperer" among his peers. Tragedy struck when dark forces, led by a ruthless sorcerer seeking to harness the realm\'s elemental magic, invaded Eldoria, leaving destruction in their wake. Kael\'s family perished in the chaos, igniting a fierce desire for justice within him. Determined to protect the natural world, he trained rigorously in the ancient arts of archery and elemental magic, guided by the wisdom of the village\'s elders. As he honed his skills, Kael formed a bond with a mystical hawk named Zephyr, who became his loyal companion and scout. With the winds as his ally, he set out on a quest to reclaim his homeland and vanquish the dark sorcerer. Along his journey, Kael gathered allies from various realms, forging a fellowship united by a shared purpose: to restore balance to the Enchanted Realm. He encountered trials that tested his resolve and faced adversaries that threatened not only his life but the very essence of nature itself. Kael\'s adventures led him to uncover ancient relics of power, granting him the ability to manipulate the winds with greater mastery. As he faced the sorcerer in a climactic battle, Kael harnessed the full force of nature, unleashing a tempest that shattered the darkness and restored light to Eldoria. In the aftermath, he became a symbol of hope, inspiring future generations to honor the bond between humanity and the natural world.',
+                image: 'image2.png' // Ensure the image path is correct
+            }
+        ];
+
+        function showCharacterDetails(index) {
+            const modal = document.getElementById('characterModal');
+            const characterName = document.getElementById('characterName');
+            const characterDescription = document.getElementById('characterDescription');
+            const characterBackstory = document.getElementById('characterBackstory');
+
+            // Set character data in modal
+            characterName.textContent = characters[index].name;
+            characterDescription.textContent = characters[index].description;
+            characterBackstory.textContent = characters[index].backstory;
+
+            // Show modal
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('characterModal');
+            modal.style.display = 'none';
+        }
+
+        function selectCharacter() {
+            const selectedCharacter = document.getElementById('characterName').textContent;
+            alert(`${selectedCharacter} selected!`);
+            // You can redirect or perform other actions here
+        }
+
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('characterModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

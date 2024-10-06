@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GLOBE Quest - Explore. Learn. Protect.</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.png') no-repeat center center fixed; /* Updated background image */
+            background-size: cover;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            max-width: 80%;  /* Adjust the width of the slideshow */
+            height: 300px;  /* Fixed height for the slideshow */
+            position: relative;
+            margin: 2rem auto;
+            text-align: center;
+            border: 3px solid white; /* Optional border around slideshow */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the images fit well inside the slideshow */
+        }
+
+        .active-slide {
+            display: block;
+        }
+
+        /* Info Section */
+        .info-section {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+        }
+
+        .cta-btn {
+            background-color: #ff6f61;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background-color: #ff4b47;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent background for footer */
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>GLOBE Quest</h1>
+            <p class="tagline">Explore. Learn. Protect.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Slideshow Section -->
+        <section class="slideshow-container">
+            <img class="slides active-slide" src="image1.jpg" alt="Image 1">
+            <img class="slides" src="image2.png" alt="Image 2">
+            <img class="slides" src="image3.png" alt="Image 3">
+            <img class="slides" src="image4.png" alt="Image 4">
+        </section>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <p>The GLOBE Protocols are essential because they empower individuals—students, educators, and citizen scientists alike—to contribute meaningfully to scientific research while learning about the environment. By following standardized methods for collecting data on topics such as climate, water quality, soil health, and biodiversity, participants can ensure their findings are accurate, reliable, and comparable across different regions and time periods. This data contributes to a global database that scientists use to track environmental changes, analyze trends, and make informed decisions about pressing issues like climate change and natural resource management. The GLOBE Protocols not only promote hands-on learning but also inspire a sense of responsibility, encouraging individuals to take part in understanding and protecting our planet.</p>
+        </section>
+
+        <section class="cta">
+            <h2>Are You Ready to Start Your Quest?</h2>
+            <p>Sign up today and make a difference!</p>
+            <button class="cta-btn" onclick="window.location.href='home.html'">Get Started</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GLOBE Quest | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+    </footer>
+
+    <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+</html>

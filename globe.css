@@ -1,0 +1,129 @@
+/* General Body Style */
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  padding: 20px;
+  color: #333;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Container Styling */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(-30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Heading Styling */
+h1 {
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Level Styling */
+.level {
+  margin: 20px 0;
+  opacity: 0;
+  animation: levelAppear 1.2s ease-in-out forwards;
+}
+
+@keyframes levelAppear {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Locked Level Pulsing Effect */
+.locked {
+  opacity: 0.5;
+  pointer-events: none;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); }
+  100% { box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+}
+
+/* Button Styling with Hover & Scale Effect */
+button {
+  padding: 12px 25px;
+  background: linear-gradient(to right, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(to right, #2980b9, #3498db);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress Bar Styling */
+.progress-bar {
+  height: 10px;
+  background-color: #3498db;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background-color: #2ecc71;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Result Styling */
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+}
+
+/* Hover Effect for Questions */
+.question {
+  margin: 15px 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.question:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes for subtle level unlock animation */
+@keyframes unlock {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOBE Protocols Quiz Game</title>
+    <link rel="stylesheet" href="globe.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Levels</a></li>
+            <li><button id="team-info-button">Team Info</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>GLOBE Protocols Quiz Game</h1>
+
+        <div id="level-1" class="level">
+            <h2>Level 1: Urbanization</h2>
+            <div id="quiz-1"></div>
+            <button id="submit-level-1">Submit Level 1</button>
+        </div>
+
+        <div id="level-2" class="level locked">
+            <h2>Level 2: Water Pollution (Locked)</h2>
+            <div id="quiz-2"></div>
+            <button id="submit-level-2">Submit Level 2</button>
+        </div>
+
+        <div id="level-3" class="level locked">
+            <h2>Level 3: Drought (Locked)</h2>
+            <div id="quiz-3"></div>
+            <button id="submit-level-3">Submit Level 3</button>
+        </div>
+
+        <div id="level-4" class="level locked">
+            <h2>Level 4: Heat Waves (Locked)</h2>
+            <div id="quiz-4"></div>
+            <button id="submit-level-4">Submit Level 4</button>
+        </div>
+
+        <div id="level-5" class="level locked">
+            <h2>Level 5: Flooding (Locked)</h2>
+            <div id="quiz-5"></div>
+            <button id="submit-level-5">Submit Level 5</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="globe.js"></script>
+    <script>
+        // Team Info Button Functionality
+        const teamInfoButton = document.getElementById('team-info-button');
+
+        // Navigate to the team_formation.html page when the Team Info button is clicked
+        teamInfoButton.addEventListener('click', () => {
+            window.location.href = 'team_formation.html'; // Redirect to team_formation.html
+        });
+    </script>
+</body>
+</html>

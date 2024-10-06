@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check User Team</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #6e7c91, #c4c9d3);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 36px;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .status {
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .success {
+      color: green;
+      background-color: #dff0d8;
+    }
+
+    .error {
+      color: red;
+      background-color: #f2dede;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #teamDetails {
+      margin-top: 20px;
+      text-align: left;
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      padding: 15px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #teamForm {
+      margin-top: 20px;
+      padding: 15px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    ul li {
+      padding: 5px;
+      background: #f7f7f7;
+      margin: 5px 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>User Team Status</h1>
+  
+  <p><strong>Username:</strong> <span id="username"></span></p>
+  
+  <!-- Message about team existence -->
+  <div id="message" class="status"></div>
+  
+  <!-- Team Details -->
+  <div id="teamDetails"></div>
+  
+  <!-- Form to create team, initially hidden -->
+  <div id="teamForm" class="hidden">
+    <h3>Create a New Team</h3>
+    <form id="createTeamForm">
+      <label for="teamName">Team Name:</label>
+      <input type="text" id="teamName" name="teamName" required>
+      
+      <label for="members">Members (comma separated usernames):</label>
+      <input type="text" id="members" name="members" required>
+      
+      <button type="submit">Create Team</button>
+    </form>
+  </div>
+  
+  <script>
+    async function checkUserTeam() {
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get("username") || "anshuman"; // Extract "username" from query parameter or use a default value
+      document.getElementById("username").textContent = username;
+
+      try {
+        const response = await fetch(`http://localhost:3000/user/checkUserTeam?username=${username}`);
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        const data = await response.json();
+
+        const messageDiv = document.getElementById("message");
+        const teamDetailsDiv = document.getElementById("teamDetails");
+        const teamFormDiv = document.getElementById("teamForm");
+
+        if (data.exists) {
+          messageDiv.textContent = "Team is formed!";
+          messageDiv.className = "status success";
+
+          // Show team details
+          const team = data.team;
+          teamDetailsDiv.innerHTML = `
+            <h3>Team Details:</h3>
+            <p><strong>Team Name:</strong> ${team.teamName}</p>
+            <p><strong>Members:</strong></p>
+            <ul>
+              ${team.members.map(member => `<li>${member}</li>`).join('')}
+            </ul>
+            <p><strong>Team Score:</strong> ${team.score}</p> <!-- Added team score -->
+          `;
+          teamFormDiv.classList.add("hidden"); // Hide the team creation form if the team exists
+        } else {
+          messageDiv.textContent = "No team assigned.";
+          messageDiv.className = "status error";
+
+          // Clear the team details and show the form for creating a team
+          teamDetailsDiv.innerHTML = "";
+          teamFormDiv.classList.remove("hidden"); // Unhide the form for creating a team
+        }
+      } catch (error) {
+        console.error(error);
+        document.getElementById("message").textContent = "Error occurred while checking the team.";
+        document.getElementById("message").className = "status error";
+      }
+    }
+
+    async function createTeam(event) {
+      event.preventDefault(); // Prevent the form from submitting the traditional way
+      
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get("username") || "anshuman"; // Extract "username" from query parameter or use default
+
+      // Get the input values for the team name and members
+      const teamName = document.getElementById("teamName").value;
+      const members = document.getElementById("members").value.split(",").map(member => member.trim());
+
+      try {
+        const response = await fetch(`http://localhost:3000/user/createTeam`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ teamName, members })
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to create team");
+        }
+
+        const data = await response.json();
+        if (data.message === 'Team created successfully!') {
+          alert('Team created successfully!');
+
+          // Show newly created team details without reloading
+          const teamDetailsDiv = document.getElementById("teamDetails");
+          teamDetailsDiv.innerHTML = `
+            <h3>Team Details:</h3>
+            <p><strong>Team Name:</strong> ${teamName}</p>
+            <p><strong>Members:</strong></p>
+            <ul>
+              ${members.map(member => `<li>${member}</li>`).join('')}
+            </ul>
+            <p><strong>Team Score:</strong> ${data.teamScore}</p> <!-- Display team score -->
+          `;
+
+          // Update the message and hide the form
+          const messageDiv = document.getElementById("message");
+          messageDiv.textContent = "Team is formed!";
+          messageDiv.className = "status success";
+          document.getElementById("teamForm").classList.add("hidden"); // Hide the team creation form
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Error occurred while creating the team.");
+      }
+    }
+
+    // Call the function to check user team status when the page loads
+    window.onload = checkUserTeam;
+
+    // Add an event listener for the team creation form submission
+    document.getElementById("createTeamForm").addEventListener("submit", createTeam);
+  </script>
+</body>
+</html>
