@@ -8,9 +8,9 @@
 
 [![Pyro Immersive Experience](images/PyroImmersive_Experience.png)](https://ady37.github.io/Pyro/)
 
-#### Team Name - Pyro
-#### Problem Statement - Symphony of the Stars: Harmonizing James Webb Telescope in Music and Images
-#### Team Leader Email -1. Registration : 23f3003920@ds.study.iitm.ac.in 2.Github : aditya.yadav.email@gmail.com
+### Team Name - Pyro
+### Problem Statement - Symphony of the Stars: Harmonizing James Webb Telescope in Music and Images
+### Team Leader Email -1. Registration : 23f3003920@ds.study.iitm.ac.in <br> 2.Github : aditya.yadav.email@gmail.com
 
 ## A Brief of the Prototype:
 
@@ -37,8 +37,8 @@ Click [here](https://ady37.github.io/Pyro/) for a breathtaking experience.
 
 
 ## Code Execution Instruction:
-1.Open the browser
-2.Copy and paste the following url in the browser
+1.Open the browser <br>
+2.Copy and paste the following url in the browser <br>
 ```https://ady37.github.io/Pyro/```
 
 Click on [demo video ](https://drive.google.com/file/d/1OFb7GgocR7P_257W9i3fmQELgWav1Ova/view?usp=sharing
