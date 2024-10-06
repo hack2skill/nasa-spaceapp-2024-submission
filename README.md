@@ -27,6 +27,40 @@ The proposed solution is a **Seismic Signal Analysis System** that processes sei
 ---
 
 ## Code Execution Instructions
+### Step-by-Step Execution Plan
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/your-repository.git
+   cd your-repository
+Set Up the Backend:
+
+Navigate to the backend directory:
+bash
+
+cd backend
+Install the required packages:
+bash
+
+pip install -r requirements.txt
+Start the Flask server:
+bash
+
+python app.py
+Set Up the Frontend:
+
+Navigate to the frontend directory:
+bash
+
+cd ../frontend
+Install the required packages:
+bash
+
+npm install
+Start the React development server:
+bash
+
+npm run dev
 
 ### Repository Structure
 
