@@ -12,8 +12,6 @@
 #### Problem Statement - Symphony of the Stars: Harmonizing James Webb Telescope in Music and Images
 #### Team Leader Email -1. Registration : 23f3003920@ds.study.iitm.ac.in 2.Github : aditya.yadav.email@gmail.com
 
-
-
 ## A Brief of the Prototype:
 
 ### What is James Webb Telescope?
