@@ -15,4 +15,5 @@ potential risks posed by these cosmic travelers. Whether you're a space
 enthusiast, researcher, or student, this dynamic model turns the universe
 into your personal, visually captivating, educational playground. Ready to
 embark on a journey through the stars?
+![Screenshot 2024-10-06 102602](https://github.com/user-attachments/assets/98a2d13a-b132-43f1-aca2-fcb6b2d9785a)
 
