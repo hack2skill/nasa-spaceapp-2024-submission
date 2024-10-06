@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="games.js"></script>
+</head>
+<body class="games-body-container">
+    <header style="background-color: #5c0555;">
+        <h1 style="font-weight: normal;">Space Trivia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html" class="join-btn">Join Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <div class="space-body">
+            <div class="games-container-1">
+                <h1>Space Trivia Game</h1>
+                <div id="question-container" class="hidden">
+                    <h2 id="question">Question text</h2>
+                    <div id="answer-buttons" class="btn-grid"></div>
+                </div>
+                <div id="controls">
+                    <button id="start-btn" class="game-btn">Start Game</button>
+                    <button id="next-btn" class="game-btn hidden-games">Next Question</button>
+                </div>
+                <div id="score-container" class="hidden">
+                    <h2>Your Score: <span id="score">0</span> / 35</h2>
+                    <button id="restart-btn" class="btn hidden">Restart Game</button>
+                </div>
+            </div>
+        </div>
+            <script src="script.js"></script>
+        </section>
+        <div class="instructions-container">
+            <h1>Space Trivia Game Instructions</h1>
+            <ol class="instructions-list">
+                <li style="color:white"><strong>Objective:</strong> The goal of the game is to answer as many space-related questions correctly as possible to achieve a high score.</li>
+                <li style="color:white"><strong>Starting the Game:</strong> Click on the "Start" button to begin the trivia.</li>
+                <li style="color:white"><strong>Answering Questions:</strong> Select your answer from the provided options.</li>
+                <li style="color:white"><strong>Feedback on Answers:</strong> You will receive immediate feedback on whether your answer is correct or incorrect.</li>
+                <li style="color:white"><strong>Next Question:</strong> Click the "Next Question" button to move on to the next question.</li>
+                <li style="color:white"><strong>Viewing Your Score:</strong> Your total score will be displayed after answering all questions.</li>
+                <li style="color:white"><strong>Restarting the Game:</strong> Click the "Restart Game" button to reset the game and play again.</li>
+                <li style="color:white"><strong>Enjoy and Learn:</strong> Have fun while learning interesting facts about space!</li>
+            </ol>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 COC Space Club</p>
+    </footer>
+</body>
+</html>
