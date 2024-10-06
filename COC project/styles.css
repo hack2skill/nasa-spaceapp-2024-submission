@@ -1,0 +1,613 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.main-heading-11{
+    margin-bottom:7px
+    margin-bottom:7px
+}
+
+.games-container-1 {
+    background-color: #162447;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.space-body{
+    font-family: 'Arial', sans-serif;
+    background-color: #0a1931;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity:0.9
+}
+.btn {
+    background-color: #00adb5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #00c1a7;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+}
+
+.btn-answer {
+    background-color: #1f4068;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-answer:hover {
+    background-color: #e43f5a;
+}
+
+.hidden-games {
+    display: none;
+}
+.instructions-container{
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #162447; /* Slightly lighter background */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+.game-btn{
+    background-color: #00adb5; /* Primary button color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 12px 24px; /* Button padding */
+    margin: 15px; /* Space around the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Increase font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and click effects */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.instructions-list {
+    list-style-type: decimal;
+    padding-left: 20px;}
+.instructions-list li {
+        margin: 10px 0;
+    }
+.about-team-member{
+    color:white
+}
+.body-container{
+    background-image: url("https://wallpaper-house.com/data/out/10/wallpaper2you_466777.jpg");
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position:center; 
+    background-attachment: fixed;
+
+}
+.exoplanet-body-container{
+    background-image: url("https://wallpapercave.com/wp/wp6764410.jpg");
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position:center; 
+    background-attachment: fixed;
+
+}
+
+.games-body-container{
+    background-image: url("https://hgs.cx/wp-content/uploads/2023/02/social-AI-in-contact-center.jpg");
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Makes the background fixed during scroll */
+}
+.contact-bg-container{
+    background-image: url("https://hgs.cx/wp-content/uploads/2023/02/social-AI-in-contact-center.jpg");
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Makes the background fixed during scroll */
+}
+.exploration-body-container{
+    background-image: url("https://static.vecteezy.com/system/resources/previews/036/392/946/large_2x/ai-generated-an-astronaut-exploring-the-moon-science-fiction-space-exploration-planet-universe-free-photo.jpeg");
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Makes the background fixed during scroll */
+}
+.contact-container-1 {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #494990;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity:0.7
+}
+.club-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #090a1c;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(10, 3, 54, 0.163);
+    text-align: center;
+    opacity: 0.9;
+}
+.image-container-1 {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    margin: 20px 0; /* Optional margin for spacing */
+}
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.exo-2 {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+.custom-image-1 {
+    width: 80%; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Optional: Set a maximum width */
+}
+
+.club-logo {
+    width: 300px; /* Adjust logo size as needed */
+    height: auto;
+    font-family: impact;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.label-1 {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.about-body-container{
+        background-image: url("https://wallpaperbat.com/img/77766361-purple-wallpaper-purple-wallpaper.webp");
+        background-size: cover; /* Ensures the image covers the whole area */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-position: center; /* Centers the image */
+        background-attachment: fixed; /* Makes the background fixed during scroll */
+}
+/* Basic anchor styling */
+a {
+    text-decoration: none; /* Removes underline */
+    color: #db8fd9; /* Initial color - a vibrant  */
+    font-weight: bold;
+    padding: 8px 15px; /* Adds some padding for clickable area */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #450954; /* Light background color */
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover state */
+a:hover {
+    background-color: #cb86dc; /* Blue background on hover */
+    color: rgb(59, 21, 68); /* White text on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    transform: scale(1.1); /* Slightly enlarges the link */
+    text-decoration: none;
+    border-color:#511075
+    border-radius:10px
+}
+.bottom-footer{
+    background-color: #5c0555 ;
+    color:rgb(223, 157, 222)
+}
+.main-heading{
+    color:white
+    background-color: #5c0555;
+}
+}
+.club-logo{
+   font-family:impact
+}
+body {
+    background-color: #5c0555;
+    color: #fff;
+    line-height: 1.6;
+}
+.heading
+header {
+    margin:0px;
+    background-color:#5c0555;
+    color: #fff;
+    text-align: center;
+}
+.header-1 {
+    margin:5px;
+    background-color:#2f0e49;
+    color: #fff;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius:25px;
+    opacity:0.7
+
+}
+.header-1:hover{
+    background-color: #a438ac;
+    color:rgba(56, 3, 63, 0.485)
+    text-decoration: none;
+}
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+
+}
+
+.header-1 h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+.header-2{
+    color:#a1970c
+    font-family:
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    background-color: #350e36;
+    color: #b08fb3;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #b88bd2;
+    color: #350e36;
+    text-decoration: none;
+}
+
+.join-btn {
+    background-color: #e74c3c;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.join-btn:hover {
+    background-color: #c0392b;
+}
+
+.info {
+    text-align: center;
+    padding: 20px;
+}
+
+.info h2 {
+    margin-bottom: 20px;
+}
+
+.topic-button-1{
+    display: inline-block;
+    background-color: #410a4d;
+    color: #ae7eca;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+.topic-button-1:hover{
+    background-color: #9b57a0;
+    color:rgb(37, 7, 37)!important
+    text-decoration: none;
+}
+
+.images img {
+    max-width: 45%;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 0px;
+    background: #333;
+
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+/* Container styling for the heading */
+.heading-container {
+    background-color: #1c0f2d; /* Light blue background */
+    padding: 7px; /* Adds space around the heading */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center; /* Centers the heading text */
+    margin: 20px auto; /* Centers the container on the page */
+    max-width: 800px; /* Limits the container width */
+}
+.para-container {
+    background-color: #4e3c65; /* Light blue background */
+    padding: 7px; /* Adds space around the heading */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center; /* Centers the heading text */
+    margin: 20px auto; /* Centers the container on the page */
+    max-width: 800px; /* Limits the container width */
+    opacity:0.7
+}
+
+/* Heading styling inside the container */
+.heading-container h1 {
+    font-family: 'Arial', sans-serif; /* Simple, clean font */
+    font-size: 2.5em; /* Larger text size for emphasis */
+    color: white; /* White text color to contrast with background */
+    margin: 0; /* Removes default margin */
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: white;
+}
+
+
+/* Header */
+header {
+    background-color: #004080;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+p{
+    color:white
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #a65eac;
+    color:#090a1c
+}
+/* Ensures all images are larger and maintain a medium height */
+img {
+    display: block;
+    max-width: 600px; /* Increase the width of the images */
+    width: 100%;
+    height: 300px; /* Set a medium height */
+    object-fit: cover; /* Ensures the image fits well inside the container without distortion */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 15px auto; /* Centers the image horizontally */
+}
+.research-img{
+    max-width: 300px;  /* Set the maximum width for a small/medium image */
+    width: 100%;       /* Make it responsive within the container */
+    height: auto;      /* Maintain the aspect ratio */
+    display: block;    /* Ensure it's treated as a block element */
+    margin: 0 auto;   /* Center the image horizontally */
+    /* Optional: add a border around the image */
+    border-radius: 5px; /* Optional: add slight rounding to the image */
+}
+}
+
+/* Styling for images in the section */
+section.topics img {
+    max-width: 500px; /* Slightly larger images in the topics section */
+    width: 100%;   
+    height: 280px; /* Medium height for section images */
+    object-fit: cover; /* Ensure images scale without distortion */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    margin: 20px auto; /* Center the images */
+}
+
+/* Hover effect to zoom in slightly */
+section.topics img:hover {
+    transform: scale(1.05); /* Image zooms in on hover */
+}
+
+/* Join Button */
+.join-btn {
+    background-color: #ff9933;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.join-btn:hover {
+    background-color: #ff8000;
+}
+
+/* Main Content */
+main {
+    margin-top: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.services-body-container{  background-image: url("https://wallpaper-house.com/data/out/7/wallpaper2you_171801.jpg");
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Makes the background fixed during scroll */
+
+}
+.research-body-container{  background-image: url("https://static.vecteezy.com/system/resources/previews/021/085/809/original/abstract-background-future-technology-artificial-intelligence-robot-learning-imagination-it-has-a-bright-face-and-cogs-hi-tech-pattern-inside-elements-and-circuits-on-a-bright-purple-background-vector.jpg");
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Makes the background fixed during scroll */
+
+}
+.research-section, .dark-matter, .black-holes, .galaxy-evolution, .exoplanet-research, .future-research {
+    margin-bottom: 40px;
+}
+
+.research-section img, .dark-matter img, .black-holes img, .galaxy-evolution img, .exoplanet-research img, .future-research img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.research-section p, .dark-matter p, .black-holes p, .galaxy-evolution p, .exoplanet-research p, .future-research p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background-color: hsl(293, 78%, 16%);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+/* Topics Buttons on Main Page */
+.topic-button-1 {
+    display: inline-block;
+    background-color: #622358;
+    color: rgb(237, 212, 242);
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.topic-button-1:hover {
+    background-color: #a06f91;
+    color:#350e36 !important
+    transform: translateY(-3px);
+    text-decoration:none
+
+}
+
+/* Carousel (for Exoplanets) */
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-slide {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container img {
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .research-section img, .dark-matter img, .black-holes img, .galaxy-evolution img, .exoplanet-research img, .future-research img {
+        max-width: 100%;
+    }
+}
