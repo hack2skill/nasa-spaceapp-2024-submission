@@ -5,7 +5,6 @@
 #### Team Leader Email - satish48a@gmail.com
 
 ## A Brief of the Prototype:
-  What is your solution? and how it works.
 nyxNOVA merges cutting-edge exoplanet cartography with intelligent navigation, paving the way for next-generation cosmic exploration. Our solution harnesses the power of AI to decode the cosmo's enigmatic terrain and chart safe passages for future missions.
 Features:
 Celestial Sentinel: Our AI-powered cosmic detective scans the exoplanet surface, unveiling hidden craters and boulders with unprecedented precision.
